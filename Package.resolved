@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "VarInt",
+        "repositoryURL": "https://github.com/jmmaloney4/VarInt.git",
+        "state": {
+          "branch": "master",
+          "revision": "2b335fb5e0dffa025e299bb9e5ba02136eca2ec1",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
