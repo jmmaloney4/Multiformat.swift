@@ -8,5 +8,8 @@ import XCTest
 @testable import CID
 
 final class CIDTests: XCTestCase {
-    func testExample() {}
+    func testExample() throws {
+        let a = try CID("bafykbzacedlxaeuckppk5sxhk4bkriewnf3zcojvaklwgzvwaghykrmuyzi3u")
+        print(a)
+    }
 }
