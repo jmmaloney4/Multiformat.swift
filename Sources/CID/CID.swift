@@ -5,6 +5,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Foundation
+import Multihash
+import VarInt
 
 public struct CID {
     public enum Version: Int {
@@ -13,4 +15,6 @@ public struct CID {
     }
 
     var version: Version
+    var codec: UInt64
+    var hash: Multihash
 }
