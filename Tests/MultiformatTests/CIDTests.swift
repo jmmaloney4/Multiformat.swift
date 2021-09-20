@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import XCTest
-@testable import CID
+@testable import Multiformat
 
 final class CIDTests: XCTestCase {
     func testExample() throws {
