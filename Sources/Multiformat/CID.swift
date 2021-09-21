@@ -16,6 +16,12 @@ enum CIDError: Error {
     case unknownMultihash
 }
 
+enum MultiformatError: Error {
+    // Multibase Errors
+    case invalidFormat
+    case notInAlphabet
+}
+
 public struct CID {
     public enum Version: Int {
         case v0 = 0

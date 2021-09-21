@@ -7,8 +7,8 @@
 import XCTest
 @testable import Multiformat
 
-final class CIDTests: XCTestCase {
-    func testExample() throws {
-        
+final class BaseNTests: XCTestCase {
+    func testToAndFromData() throws {
+        XCTAssertEqual("000111010101011110011", try BaseN().fromData(try BaseN().toData("000111010101011110011")))
     }
 }
