@@ -82,7 +82,18 @@ public class BaseN {
         return alphabet[0]
     }
     
-    init(_ alphabet: [UInt8] = [UInt8]("01".utf8)) {
+    public static let binary = BaseN("01")
+    public static let octal = BaseN("01234567")
+    public static let hex = BaseN("0123456789ABCDEF")
+    public static let base32 = BaseN("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567")
+    public static let base58 = BaseN("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
+    public static let base64 = BaseN("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")
+
+    public init(_ alphabet: String) {
+        self.alphabet = [UInt8](alphabet.utf8)
+    }
+    
+    public init(_ alphabet: [UInt8]) {
         self.alphabet = alphabet
     }
     
@@ -119,6 +130,9 @@ public class BaseN {
         }
         
         // bitsPerDigit * Digits > LeadingBits iff digits > LZB / bpd
+//        print([UInt8](data))
+//        print(Double([UInt8](data).leadingZeroBitCount))
+//        print(Double([UInt8](data).leadingZeroBitCount) / Double(self.bitsPerDigit))
         let pads = ceil(Double([UInt8](data).leadingZeroBitCount) / Double(self.bitsPerDigit))
         
         let rv = String(bytes: bytes, encoding: .utf8)

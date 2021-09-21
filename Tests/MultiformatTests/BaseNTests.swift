@@ -9,6 +9,9 @@ import XCTest
 
 final class BaseNTests: XCTestCase {
     func testToAndFromData() throws {
-        XCTAssertEqual("000111010101011110011", try BaseN().fromData(try BaseN().toData("000111010101011110011")))
+        XCTAssertEqual("000000111010101011110011", try BaseN.binary.fromData(try BaseN.binary.toData("000000111010101011110011")))
+        print(log2(Double(16)))
+        XCTAssertEqual("4D616E", try BaseN.hex.fromData("Man".data(using: .ascii)!))
     }
+    
 }
