@@ -16,13 +16,17 @@ final class BaseNTests: XCTestCase {
 //        XCTAssertEqual("TWFu", try BaseN.base64.fromData("Man".data(using: .ascii)!))
 //        XCTAssertEqual("23260556", try BaseN.octal.fromData("Man".data(using: .ascii)!))
         
-        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
-        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 22, 4]), [77, 97])
-        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 16]), [77])
+        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
+        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 4]), [77, 97])
+        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 16]), [77])
         
-        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19, 22, 5]))
-        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19, 22]))
-        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19]))
+        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22, 5]))
+        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22]))
+        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19]))
+        
+        XCTAssertEqual(try RFC4648.octetGroupToSextets([77, 97, 110]), [19, 22, 5, 46])
+        XCTAssertEqual(try RFC4648.octetGroupToSextets([77, 97]), [19, 22, 4])
+        XCTAssertEqual(try RFC4648.octetGroupToSextets([77]), [19, 16])
         
     }
 }

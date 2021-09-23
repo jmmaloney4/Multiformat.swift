@@ -206,7 +206,7 @@ public class RFC4648 {
      *      +--1.index--+--2.index--+--3.index--+--4.index--+
      *
      */
-    public static func decodeSextetGroupToOctets(_ sextets: [UInt8]) throws -> [UInt8] {
+    public static func sextetGroupToOctets(_ sextets: [UInt8]) throws -> [UInt8] {
         guard sextets.count <= 4 else {
             throw RFC4648Error.invalidGroupSize
         }
@@ -244,6 +244,40 @@ public class RFC4648 {
         }
         
         output.append(r2 * 64 + sextets[3])
+        return output
+    }
+    
+    public static func octetGroupToSextets(_ input: [UInt8]) throws -> [UInt8] {
+        guard input.count <= 3 else {
+            throw RFC4648Error.invalidGroupSize
+        }
+        
+        if input.count == 0 { return [] }
+        
+        var output = Array<UInt8>()
+        
+        let (q0, r0) = input[0].quotientAndRemainder(dividingBy: 4)
+        output.append(q0)
+        
+        var o1 = r0 * 16
+        if input.count == 1 {
+            output.append(o1)
+            return output
+        }
+        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: 16)
+        o1 += q1
+        output.append(o1)
+        
+        var o2 = r1 * 4
+        if input.count == 2 {
+            output.append(o2)
+            return output
+        }
+        let (q2, r2) = input[2].quotientAndRemainder(dividingBy: 64)
+        o2 += q2
+        output.append(o2)
+        output.append(r2)
+        
         return output
     }
 }
