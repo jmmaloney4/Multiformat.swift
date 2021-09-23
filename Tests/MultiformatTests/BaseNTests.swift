@@ -9,9 +9,20 @@ import XCTest
 
 final class BaseNTests: XCTestCase {
     func testToAndFromData() throws {
-        XCTAssertEqual("000000111010101011110011", try BaseN.binary.fromData(try BaseN.binary.toData("000000111010101011110011")))
-        print(log2(Double(16)))
-        XCTAssertEqual("4D616E", try BaseN.hex.fromData("Man".data(using: .ascii)!))
+//        XCTAssertEqual("000000111010101011110011", try BaseN.binary.fromData(try BaseN.binary.toData("000000111010101011110011")))
+//        print(log2(Double(16)))
+//        XCTAssertEqual("010011010110000101101110", try BaseN.binary.fromData("Man".data(using: .ascii)!))
+//        XCTAssertEqual("4D616E", try BaseN.hex.fromData("Man".data(using: .ascii)!))
+//        XCTAssertEqual("TWFu", try BaseN.base64.fromData("Man".data(using: .ascii)!))
+//        XCTAssertEqual("23260556", try BaseN.octal.fromData("Man".data(using: .ascii)!))
+        
+        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
+        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 22, 4]), [77, 97])
+        XCTAssertEqual(try RFC4648.decodeSextetGroupToOctets([19, 16]), [77])
+        
+        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19, 22, 5]))
+        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19, 22]))
+        XCTAssertThrowsError(try RFC4648.decodeSextetGroupToOctets([19]))
+        
     }
-    
 }

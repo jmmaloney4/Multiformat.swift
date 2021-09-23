@@ -160,3 +160,90 @@ extension Array where Element: FixedWidthInteger {
         }
     }
 }
+
+enum RFC4648Error: Error {
+    case outOfAlphabetCharacter
+    case invalidGroupSize
+    case invalidSextet
+    case notCanonicalInput
+}
+
+public class RFC4648 {
+    enum Alphabet {
+        case base64
+        case base64url
+        case base32
+        case base32hex
+    }
+    
+    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".unicodeScalars.map({ $0.value })
+    let pad = "="
+    
+    func decodeString(_ input: String, allowOutOfAlphabetCharacters: Bool = false) throws -> Data? {
+        let radix = BigUInt(64)
+        var i = BigUInt(1)
+        var value = BigUInt(0)
+        for c in String(input.reversed()).unicodeScalars.map({ $0.value }) {
+            guard let index = alphabet.firstIndex(of: c) else {
+                throw RFC4648Error.outOfAlphabetCharacter
+            }
+            value += (i * BigUInt(index))
+            i *= radix
+        }
+        
+        let buf = [UInt8](value.serialize())
+        
+        return nil
+    }
+    
+    
+    /*
+     *
+     *      +--first octet--+-second octet--+--third octet--+
+     *      |7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|
+     *      +-----------+---+-------+-------+---+-----------+
+     *      |5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|
+     *      +--1.index--+--2.index--+--3.index--+--4.index--+
+     *
+     */
+    public static func decodeSextetGroupToOctets(_ sextets: [UInt8]) throws -> [UInt8] {
+        guard sextets.count <= 4 else {
+            throw RFC4648Error.invalidGroupSize
+        }
+        
+        if sextets.count == 0 { return [] }
+        
+        guard sextets.count != 1 else {
+            throw RFC4648Error.notCanonicalInput
+        }
+        
+        guard sextets.allSatisfy({ $0 < 64 }) else {
+            throw RFC4648Error.invalidSextet
+        }
+        
+        var output = Array<UInt8>()
+        
+        let (q1, r1) = sextets[1].quotientAndRemainder(dividingBy: 16)
+        output.append(sextets[0] * 4 + q1)
+        
+        if sextets.count < 3 {
+            guard r1 == 0 else {
+                throw RFC4648Error.notCanonicalInput
+            }
+            return output
+        }
+        
+        let (q2, r2) = sextets[2].quotientAndRemainder(dividingBy: 4)
+        output.append(r1 * 16 + q2)
+        
+        if sextets.count < 4 {
+            guard r2 == 0 else {
+                throw RFC4648Error.notCanonicalInput
+            }
+            return output
+        }
+        
+        output.append(r2 * 64 + sextets[3])
+        return output
+    }
+}
