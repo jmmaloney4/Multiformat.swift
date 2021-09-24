@@ -186,9 +186,13 @@ public class RFC4648 {
                             .joined())
     }
     
-    static func decodeAlphabet(_ string: String, alphabet: [Character], allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
+    static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
+        if string.suffix(from: string.firstIndex(of: paddingCharacter)).contains(where: { $0 != paddingCharacter }) {
+            throw RFC4648Error.notCanonicalInput
+        }
         return try string
-            .map({ return alphabet.firstIndex(of: $0)})
+            .filter({ $0 != paddingCharacter })
+            .map({ return alphabet.firstIndex(of: $0) })
             .filter({ i in
                 guard i != nil else {
                     if !allowOutOfAlphabetCharacters {
