@@ -28,5 +28,7 @@ final class BaseNTests: XCTestCase {
         XCTAssertEqual(try RFC4648.octetGroupToSextets([77, 97]), [19, 22, 4])
         XCTAssertEqual(try RFC4648.octetGroupToSextets([77]), [19, 16])
         
+        XCTAssertEqual(try RFC4648.decodeBase64("Zm9v"),[UInt8]("foo".utf8))
+        
     }
 }

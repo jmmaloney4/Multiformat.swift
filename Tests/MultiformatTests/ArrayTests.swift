@@ -11,6 +11,6 @@ final class ArrayTests: XCTestCase {
     func testGroup() throws {
         XCTAssertEqual([0, 1, 2, 3, 4, 5].groups(of: 3), [[0, 1, 2], [3, 4, 5]])
         XCTAssertEqual([0, 1, 2, 3, 4].groups(of: 3), [[0, 1, 2], [3, 4]])
-        XCTAssertEqual([0, 1, 3, 4, 5].groups(of: 3), [[0, 2, 3], [4, 5]])
+        XCTAssertEqual([0, 1, 3, 4, 5].groups(of: 3), [[0, 1, 3], [4, 5]])
     }
 }

@@ -178,12 +178,15 @@ public class RFC4648 {
     
     public static let base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".map({$0})
 
-    func decodeBase64(_ string: String) throws -> Data {
-        let sextets = try decodeAlphabet(string, alphabet: RFC4648.base64Alphabet)
-        return Data()
+    public static func decodeBase64(_ string: String) throws -> [UInt8] {
+        return try [UInt8](try RFC4648
+                            .decodeAlphabet(string, alphabet: RFC4648.base64Alphabet)
+                            .groups(of: 4)
+                            .map({ try RFC4648.sextetGroupToOctets($0) })
+                            .joined())
     }
     
-    func decodeAlphabet(_ string: String, alphabet: [Character], allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
+    static func decodeAlphabet(_ string: String, alphabet: [Character], allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
         return try string
             .map({ return alphabet.firstIndex(of: $0)})
             .filter({ i in
