@@ -176,26 +176,28 @@ public class RFC4648 {
         case base32hex
     }
     
-    let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".unicodeScalars.map({ $0.value })
-    let pad = "="
-    
-    func decodeString(_ input: String, allowOutOfAlphabetCharacters: Bool = false) throws -> Data? {
-        let radix = BigUInt(64)
-        var i = BigUInt(1)
-        var value = BigUInt(0)
-        for c in String(input.reversed()).unicodeScalars.map({ $0.value }) {
-            guard let index = alphabet.firstIndex(of: c) else {
-                throw RFC4648Error.outOfAlphabetCharacter
-            }
-            value += (i * BigUInt(index))
-            i *= radix
-        }
-        
-        let buf = [UInt8](value.serialize())
-        
-        return nil
+    public static let base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".map({$0})
+
+    func decodeBase64(_ string: String) throws -> Data {
+        let sextets = try decodeAlphabet(string, alphabet: RFC4648.base64Alphabet)
+        return Data()
     }
     
+    func decodeAlphabet(_ string: String, alphabet: [Character], allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
+        return try string
+            .map({ return alphabet.firstIndex(of: $0)})
+            .filter({ i in
+                guard i != nil else {
+                    if !allowOutOfAlphabetCharacters {
+                        throw RFC4648Error.outOfAlphabetCharacter
+                    } else {
+                        return false
+                    }
+                }
+                return true
+            })
+            .map({ UInt8($0!) })
+    }
     
     /*
      *
@@ -279,5 +281,17 @@ public class RFC4648 {
         output.append(r2)
         
         return output
+    }
+}
+
+extension Array {
+    public func groups(of size: Int) -> [Array<Element>] {
+        var rv = Array<Array<Element>>()
+        let range = stride(from: 0, to: self.count, by: size)
+        for i in range {
+            let end = Swift.min(i+size, self.count)
+            rv.append(Array(self[i..<end]))
+        }
+        return rv
     }
 }
