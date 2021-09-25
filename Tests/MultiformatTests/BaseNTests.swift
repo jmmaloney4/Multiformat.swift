@@ -25,7 +25,12 @@ final class BaseNTests: XCTestCase {
     
     func testQuintetOctetConversion() {
         XCTAssertEqual(try RFC4648.octetGroupToQuintets([102, 111, 111]), [12, 25, 23, 22, 30])
-
+        XCTAssertEqual(try RFC4648.octetsToNBits([102, 111, 111]), [12, 25, 23, 22, 30])
+        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97], n: 6), [19, 22, 4])
+        
+        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97, 110], n: 6), [19, 22, 5, 46])
+        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97], n: 6), [19, 22, 4])
+        XCTAssertEqual(try RFC4648.octetsToNBits([77], n: 6), [19, 16])
     }
     
     func testToAndFromData() throws {

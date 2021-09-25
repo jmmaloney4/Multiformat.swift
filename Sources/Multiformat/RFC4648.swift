@@ -1,9 +1,8 @@
+// Copyright © 2021 Jack Maloney. All Rights Reserved.
 //
-//  File.swift
-//
-//
-//  Created by Jack Maloney on 9/24/21.
-//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Foundation
 
@@ -188,14 +187,14 @@ internal enum RFC4648 {
 
         return output
     }
-    
+
     /*
      *  01234567 89012345 67890123 45678901 23456789
      *  +--------+--------+--------+--------+--------+
      *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
      *  +--------+--------+--------+--------+--------+
      */
-    
+
     public static func octetGroupToQuintets(_ input: [UInt8]) throws -> [UInt8] {
         if input.isEmpty { return [] }
         guard input.count <= 5 else {
@@ -204,64 +203,86 @@ internal enum RFC4648 {
         var output = [UInt8]()
         let len = input.count
         let input = input + Array(repeating: UInt8(0), count: 5 - input.count)
-        
+
         var quintetRhsOffset: UInt8 = 5
-        
+
         let (o0, u1) = input[0].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o0)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (l1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(u1 * pow2(quintetRhsOffset) + l1)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (o2, u3) = r1.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o2)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (l3, u4) = input[2].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(u3 * pow2(quintetRhsOffset) + l3)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (l4, r2) = input[3].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(u4 * pow2(quintetRhsOffset) + l4)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (o5, u6) = r2.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o5)
         quintetRhsOffset = (quintetRhsOffset + 5) % 8
-        
+
         let (l6, o7) = input[4].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(u6 * pow2(quintetRhsOffset) + l6)
         output.append(o7)
-        
+
         switch len {
-        case 1: return [UInt8](output[0..<2])
-        case 2: return [UInt8](output[0..<4])
-        case 3: return [UInt8](output[0..<5])
-        case 4: return [UInt8](output[0..<7])
+        case 1: return [UInt8](output[0 ..< 2])
+        case 2: return [UInt8](output[0 ..< 4])
+        case 3: return [UInt8](output[0 ..< 5])
+        case 4: return [UInt8](output[0 ..< 7])
         case 5: return output
         default: fatalError()
         }
     }
-    
-    func oQ(_ input: [UInt8]) throws -> [UInt8] {
-        guard input.count <= 5 else {
+
+    public static func octetsToNBits(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
+        if input.isEmpty { return [] }
+        let len = input.count
+        let l = (lcm(8, n) / 8)
+        guard input.count <= l else {
             throw RFC4648Error.invalidGroupSize
         }
+        let input = input + Array(repeating: UInt8(0), count: l - input.count)
 
-        if input.isEmpty { return [] }
+        let n = UInt8(n)
         var output = [UInt8]()
-        var offset = 0
-        for b in input {
-            
+        var rhsOffset: UInt8 = n
+        var i = 0
+        var octet: UInt8 = input[i]
+        var carry: UInt8 = 0
+        while true {
+            let (q, r) = octet.quotientAndRemainder(dividingBy: pow2(8 - rhsOffset))
+            output.append(carry * pow2(rhsOffset) + q)
+            rhsOffset = rhsOffset + n
+            if rhsOffset < 8 {
+                octet = r
+                carry = 0
+            } else {
+                i += 1
+                if i < input.count {
+                    carry = r
+                    octet = input[i]
+                } else {
+                    output.append(r)
+                    break
+                }
+            }
+            rhsOffset = rhsOffset % 8
         }
-        
-        
-        return []
+
+        let outSize = ceil(Double(8 * len) / Double(n))
+        return [UInt8](output[0 ..< Int(outSize)])
     }
 }
-
 
 @inlinable internal func pow2(_ x: UInt8) -> UInt8 {
     if x == 0 { return 1 }
