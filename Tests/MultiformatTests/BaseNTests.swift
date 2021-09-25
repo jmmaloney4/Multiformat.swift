@@ -30,5 +30,8 @@ final class BaseNTests: XCTestCase {
         
         XCTAssertEqual(try RFC4648.decodeBase64("Zm9v"),[UInt8]("foo".utf8))
         
+        XCTAssertEqual(try RFC4648.encodeToBase64(Data("Many hands make light work.".utf8)), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu")
+        XCTAssertEqual(try RFC4648.decodeBase64("TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu"), [UInt8]("Many hands make light work.".utf8))
+        
     }
 }

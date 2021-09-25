@@ -142,7 +142,6 @@ public class BaseN {
             return String(repeating: Character(Unicode.Scalar(zero)), count: Int(pads)) + rv!
         }
     }
-    
 }
 
 extension Array where Element: FixedWidthInteger {
@@ -166,6 +165,7 @@ enum RFC4648Error: Error {
     case invalidGroupSize
     case invalidSextet
     case notCanonicalInput
+    case noCorrespondingAlphabetCharacter
 }
 
 public class RFC4648 {
@@ -178,8 +178,34 @@ public class RFC4648 {
     
     public static let base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".map({$0})
 
+    public static func encodeToBase64(_ data: Data) throws -> String {
+        let sextets = [UInt8](try [UInt8](data)
+                                .groups(of: 3)
+                                .map { try RFC4648.octetGroupToSextets($0)}
+                                .joined())
+        let encoded = try encode(sextets, withAphabet: base64Alphabet)
+        let padded = addPaddingCharacters(string: encoded, forEncodingWithGroupSize: 4)
+        return String(padded)
+    }
+    
+    static func addPaddingCharacters(string: [Character], paddingCharacter: Character = "=", forEncodingWithGroupSize groupSize:Int) -> [Character] {
+        guard let group = string.groups(of: groupSize).last else {
+            return []
+        }
+        return string + Array(repeating: paddingCharacter, count: groupSize - group.count)
+    }
+    
+    static func encode(_ data: [UInt8], withAphabet alphabet: [Character]) throws -> [Character] {
+        return try data.map { byte in
+            guard byte < alphabet.count else {
+                throw RFC4648Error.noCorrespondingAlphabetCharacter
+            }
+            return alphabet[Int(byte)]
+        }
+    }
+    
     public static func decodeBase64(_ string: String) throws -> [UInt8] {
-        return try [UInt8](try RFC4648
+        return [UInt8](try RFC4648
                             .decodeAlphabet(string, alphabet: RFC4648.base64Alphabet)
                             .groups(of: 4)
                             .map({ try RFC4648.sextetGroupToOctets($0) })
@@ -187,7 +213,7 @@ public class RFC4648 {
     }
     
     static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters:Bool = false) throws -> [UInt8] {
-        if string.suffix(from: string.firstIndex(of: paddingCharacter)).contains(where: { $0 != paddingCharacter }) {
+        if let i = string.firstIndex(of: paddingCharacter), string.suffix(from: i).contains(where: { $0 != paddingCharacter }) {
             throw RFC4648Error.notCanonicalInput
         }
         return try string
