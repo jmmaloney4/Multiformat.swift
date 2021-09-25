@@ -8,7 +8,5 @@ import XCTest
 @testable import Multiformat
 
 final class CIDTests: XCTestCase {
-    func testExample() throws {
-        
-    }
+    func testExample() throws {}
 }
