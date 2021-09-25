@@ -166,56 +166,96 @@ internal enum RFC4648 {
 
         var output = [UInt8]()
 
-        let (q0, r0) = input[0].quotientAndRemainder(dividingBy: 4)
+        let (q0, r0) = input[0].quotientAndRemainder(dividingBy: pow2(2))
         output.append(q0)
 
-        var o1 = r0 * 16
+        let c1 = r0 * pow2(4)
         if input.count == 1 {
-            output.append(o1)
+            output.append(c1)
             return output
         }
-        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: 16)
-        o1 += q1
-        output.append(o1)
+        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(4))
+        output.append(c1 + q1)
 
-        var o2 = r1 * 4
+        let c2 = r1 * 4
         if input.count == 2 {
-            output.append(o2)
+            output.append(c2)
             return output
         }
-        let (q2, r2) = input[2].quotientAndRemainder(dividingBy: 64)
-        o2 += q2
-        output.append(o2)
+        let (q2, r2) = input[2].quotientAndRemainder(dividingBy: pow2(6))
+        output.append(c2 + q2)
         output.append(r2)
 
         return output
     }
     
-    public static func octetGroupToNBitGroup(_ input: [UInt8], n: Int) throws -> [UInt8] {
+    /*
+     *  01234567 89012345 67890123 45678901 23456789
+     *  +--------+--------+--------+--------+--------+
+     *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
+     *  +--------+--------+--------+--------+--------+
+     */
+    
+    public static func octetGroupToQuintets(_ input: [UInt8]) throws -> [UInt8] {
         if input.isEmpty { return [] }
-        let l = lcm(n, 8)
-        guard input.count <= (l / 8) else {
+        guard input.count <= 5 else {
+            throw RFC4648Error.invalidGroupSize
+        }
+        var output = [UInt8]()
+        let len = input.count
+        let input = input + Array(repeating: UInt8(0), count: 5 - input.count)
+        
+        let (o0, u1) = input[0].quotientAndRemainder(dividingBy: pow2(3))
+        output.append(o0)
+        
+        let (l1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(6))
+        output.append(u1 * pow2(2) + l1)
+        
+        let (o2, u3) = r1.quotientAndRemainder(dividingBy: pow2(1))
+        output.append(o2)
+        
+        let (l3, u4) = input[2].quotientAndRemainder(dividingBy: pow2(4))
+        output.append(u3 * pow2(4) + l3)
+        
+        let (l4, r2) = input[3].quotientAndRemainder(dividingBy: pow2(7))
+        output.append(u4 * pow2(1) + l4)
+        
+        let (o5, u6) = r2.quotientAndRemainder(dividingBy: pow2(2))
+        output.append(o5)
+        
+        let (l6, o7) = input[4].quotientAndRemainder(dividingBy: pow2(5))
+        output.append(u6 * pow2(3) + l6)
+        output.append(o7)
+        
+        switch len {
+        case 1: return [UInt8](output[0..<2])
+        case 2: return [UInt8](output[0..<4])
+        case 3: return [UInt8](output[0..<5])
+        case 4: return [UInt8](output[0..<7])
+        case 5: return output
+        default: fatalError()
+        }
+    }
+    
+    func oQ(_ input: [UInt8]) throws -> [UInt8] {
+        guard input.count <= 5 else {
             throw RFC4648Error.invalidGroupSize
         }
 
+        if input.isEmpty { return [] }
         var output = [UInt8]()
         var offset = 0
-        var q: UInt8 = 0, r: UInt8 = 0
         for b in input {
-            offset = (offset + n) % 8
-            let s = UInt8(8 - offset)
-            let carry = r * pow2(s)
-            print(offset, s, carry)
-            output[output.count - 1] += carry
-            (q, r) = b.quotientAndRemainder(dividingBy: pow2(UInt8(8 - offset)))
-            output.append(carry + q)
+            
         }
-
-        return output
+        
+        
+        return []
     }
 }
 
-internal func pow2(_ x: UInt8) -> UInt8 {
+
+@inlinable internal func pow2(_ x: UInt8) -> UInt8 {
     if x == 0 { return 1 }
     return 2 << (x - 1)
 }

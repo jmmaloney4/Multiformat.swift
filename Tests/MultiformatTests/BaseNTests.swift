@@ -8,14 +8,8 @@ import XCTest
 @testable import Multiformat
 
 final class BaseNTests: XCTestCase {
-    func testToAndFromData() throws {
-//        XCTAssertEqual("000000111010101011110011", try BaseN.binary.fromData(try BaseN.binary.toData("000000111010101011110011")))
-//        print(log2(Double(16)))
-//        XCTAssertEqual("010011010110000101101110", try BaseN.binary.fromData("Man".data(using: .ascii)!))
-//        XCTAssertEqual("4D616E", try BaseN.hex.fromData("Man".data(using: .ascii)!))
-//        XCTAssertEqual("TWFu", try BaseN.base64.fromData("Man".data(using: .ascii)!))
-//        XCTAssertEqual("23260556", try BaseN.octal.fromData("Man".data(using: .ascii)!))
-
+    
+    func testSextetOctetConversion() {
         XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
         XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 4]), [77, 97])
         XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 16]), [77])
@@ -27,14 +21,20 @@ final class BaseNTests: XCTestCase {
         XCTAssertEqual(try RFC4648.octetGroupToSextets([77, 97, 110]), [19, 22, 5, 46])
         XCTAssertEqual(try RFC4648.octetGroupToSextets([77, 97]), [19, 22, 4])
         XCTAssertEqual(try RFC4648.octetGroupToSextets([77]), [19, 16])
+    }
+    
+    func testQuintetOctetConversion() {
+        XCTAssertEqual(try RFC4648.octetGroupToQuintets([102, 111, 111]), [12, 25, 23, 22, 30])
 
+    }
+    
+    func testToAndFromData() throws {
         XCTAssertEqual(try RFC4648.decodeBase64("Zm9v"), [UInt8]("foo".utf8))
 
         XCTAssertEqual(try RFC4648.encodeToBase64(Data("Many hands make light work.".utf8)), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu")
         XCTAssertEqual(try RFC4648.decodeBase64("TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu"), [UInt8]("Many hands make light work.".utf8))
 
         XCTAssertEqual(try RFC4648.encodeToBase64(Data("foob".utf8)), "Zm9vYg==")
-        XCTAssertEqual(try RFC4648.octetGroupToNBitGroup([77, 97, 110], n: 6), [19, 22, 5, 46])
     }
     
     func testPow2() {
