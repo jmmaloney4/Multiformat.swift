@@ -205,26 +205,34 @@ internal enum RFC4648 {
         let len = input.count
         let input = input + Array(repeating: UInt8(0), count: 5 - input.count)
         
-        let (o0, u1) = input[0].quotientAndRemainder(dividingBy: pow2(3))
+        var quintetRhsOffset: UInt8 = 5
+        
+        let (o0, u1) = input[0].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o0)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (l1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(6))
-        output.append(u1 * pow2(2) + l1)
+        let (l1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
+        output.append(u1 * pow2(quintetRhsOffset) + l1)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (o2, u3) = r1.quotientAndRemainder(dividingBy: pow2(1))
+        let (o2, u3) = r1.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o2)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (l3, u4) = input[2].quotientAndRemainder(dividingBy: pow2(4))
-        output.append(u3 * pow2(4) + l3)
+        let (l3, u4) = input[2].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
+        output.append(u3 * pow2(quintetRhsOffset) + l3)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (l4, r2) = input[3].quotientAndRemainder(dividingBy: pow2(7))
-        output.append(u4 * pow2(1) + l4)
+        let (l4, r2) = input[3].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
+        output.append(u4 * pow2(quintetRhsOffset) + l4)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (o5, u6) = r2.quotientAndRemainder(dividingBy: pow2(2))
+        let (o5, u6) = r2.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
         output.append(o5)
+        quintetRhsOffset = (quintetRhsOffset + 5) % 8
         
-        let (l6, o7) = input[4].quotientAndRemainder(dividingBy: pow2(5))
-        output.append(u6 * pow2(3) + l6)
+        let (l6, o7) = input[4].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
+        output.append(u6 * pow2(quintetRhsOffset) + l6)
         output.append(o7)
         
         switch len {
