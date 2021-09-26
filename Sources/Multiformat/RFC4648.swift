@@ -55,7 +55,7 @@ internal enum RFC4648 {
     public static func encodeToBase64(_ data: Data) throws -> String {
         let sextets = [UInt8](try [UInt8](data)
             .grouped(3)
-            .map { try RFC4648.octetGroupToSextets($0) }
+            .map { try RFC4648.octetsToNBits($0, n: 6) }
             .joined())
         let encoded = try encode(sextets, withAphabet: base64Alphabet)
         let padded = self.addPaddingCharacters(string: encoded, forEncodingWithGroupSize: 4)
@@ -162,22 +162,42 @@ internal enum RFC4648 {
      *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
      *  +--------+--------+--------+--------+--------+
      */
+    public static func quintetsToOctets(_ input: [UInt8]) throws -> [UInt8] {
+        if input.isEmpty { return [] }
+        let len = input.count
+        guard input.count <= 8 else { throw RFC4648Error.invalidGroupSize }
+        guard input.allSatisfy({ $0 < pow2(5) }) else { throw RFC4648Error.invalidSextet }
+        let input = input + Array(repeating: UInt8(0), count: 8 - input.count)
+
+        var output = [UInt8]()
+        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(2))
+        let (q3, r3) = input[3].quotientAndRemainder(dividingBy: pow2(4))
+        let (q4, r4) = input[4].quotientAndRemainder(dividingBy: pow2(1))
+        let (q6, r6) = input[6].quotientAndRemainder(dividingBy: pow2(3))
+        output.append(input[0] * pow2(3) + q1)
+        output.append(r1 * pow2(6) + input[2] * pow2(1) + q3)
+        output.append(r3 * pow2(4) + q4)
+        output.append(r4 * pow2(7) + input[5] * pow2(2) + q6)
+        output.append(r6 * pow2(5) + input[7])
+
+        let outSize = ceil(Double(len * 5) / Double(8))
+        return [UInt8](output[0 ..< Int(outSize)])
+    }
 
     public static func octetsToNBits(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / 8)
-        guard input.count <= l else {
-            throw RFC4648Error.invalidGroupSize
-        }
-        let input = input + Array(repeating: UInt8(0), count: l - input.count)
+        guard input.count <= l else { throw RFC4648Error.invalidGroupSize }
 
+        let input = input + Array(repeating: UInt8(0), count: l - input.count)
         let n = UInt8(n)
         var output = [UInt8]()
         var rhsOffset: UInt8 = n
         var i = 0
         var octet: UInt8 = input[i]
         var carry: UInt8 = 0
+
         while true {
             let (q, r) = octet.quotientAndRemainder(dividingBy: pow2(8 - rhsOffset))
             output.append(carry * pow2(rhsOffset) + q)
@@ -200,6 +220,20 @@ internal enum RFC4648 {
 
         let outSize = ceil(Double(8 * len) / Double(n))
         return [UInt8](output[0 ..< Int(outSize)])
+    }
+
+    public static func nBitsToOctets(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
+        if input.isEmpty { return [] }
+        let len = input.count
+        let l = (lcm(8, n) / n)
+        guard input.count <= l else { throw RFC4648Error.invalidGroupSize }
+
+        let input = input + Array(repeating: UInt8(0), count: l - input.count)
+        let n = UInt8(n)
+        var output = [UInt8]()
+        var rhsOffset: UInt8 = n
+
+        return []
     }
 }
 
