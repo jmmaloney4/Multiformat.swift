@@ -156,93 +156,12 @@ internal enum RFC4648 {
         return output
     }
 
-    public static func octetGroupToSextets(_ input: [UInt8]) throws -> [UInt8] {
-        guard input.count <= 3 else {
-            throw RFC4648Error.invalidGroupSize
-        }
-
-        if input.isEmpty { return [] }
-
-        var output = [UInt8]()
-
-        let (q0, r0) = input[0].quotientAndRemainder(dividingBy: pow2(2))
-        output.append(q0)
-
-        let c1 = r0 * pow2(4)
-        if input.count == 1 {
-            output.append(c1)
-            return output
-        }
-        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(4))
-        output.append(c1 + q1)
-
-        let c2 = r1 * 4
-        if input.count == 2 {
-            output.append(c2)
-            return output
-        }
-        let (q2, r2) = input[2].quotientAndRemainder(dividingBy: pow2(6))
-        output.append(c2 + q2)
-        output.append(r2)
-
-        return output
-    }
-
     /*
      *  01234567 89012345 67890123 45678901 23456789
      *  +--------+--------+--------+--------+--------+
      *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
      *  +--------+--------+--------+--------+--------+
      */
-
-    public static func octetGroupToQuintets(_ input: [UInt8]) throws -> [UInt8] {
-        if input.isEmpty { return [] }
-        guard input.count <= 5 else {
-            throw RFC4648Error.invalidGroupSize
-        }
-        var output = [UInt8]()
-        let len = input.count
-        let input = input + Array(repeating: UInt8(0), count: 5 - input.count)
-
-        var quintetRhsOffset: UInt8 = 5
-
-        let (o0, u1) = input[0].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(o0)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (l1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(u1 * pow2(quintetRhsOffset) + l1)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (o2, u3) = r1.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(o2)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (l3, u4) = input[2].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(u3 * pow2(quintetRhsOffset) + l3)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (l4, r2) = input[3].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(u4 * pow2(quintetRhsOffset) + l4)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (o5, u6) = r2.quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(o5)
-        quintetRhsOffset = (quintetRhsOffset + 5) % 8
-
-        let (l6, o7) = input[4].quotientAndRemainder(dividingBy: pow2(8 - quintetRhsOffset))
-        output.append(u6 * pow2(quintetRhsOffset) + l6)
-        output.append(o7)
-
-        switch len {
-        case 1: return [UInt8](output[0 ..< 2])
-        case 2: return [UInt8](output[0 ..< 4])
-        case 3: return [UInt8](output[0 ..< 5])
-        case 4: return [UInt8](output[0 ..< 7])
-        case 5: return output
-        default: fatalError()
-        }
-    }
 
     public static func octetsToNBits(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
         if input.isEmpty { return [] }
