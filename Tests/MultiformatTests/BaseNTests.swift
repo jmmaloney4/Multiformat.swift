@@ -8,6 +8,8 @@ import XCTest
 @testable import Multiformat
 
 final class BaseNTests: XCTestCase {
+    func testOctetNTetConversion() {}
+
     func testSextetOctetConversion() {
         XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
         XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 4]), [77, 97])
@@ -16,6 +18,11 @@ final class BaseNTests: XCTestCase {
         XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22, 5]))
         XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22]))
         XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19]))
+
+        XCTAssertThrowsError(try RFC4648.nBitsToOctets([19, 22, 5], n: 6))
+        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 22, 5, 46], n: 6), [77, 97, 110])
+        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 22, 4], n: 6), [77, 97])
+        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 16], n: 6), [77])
     }
 
     func testQuintetOctetConversion() {

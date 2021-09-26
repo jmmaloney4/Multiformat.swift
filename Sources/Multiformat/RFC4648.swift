@@ -156,12 +156,6 @@ internal enum RFC4648 {
         return output
     }
 
-    /*
-     *  01234567 89012345 67890123 45678901 23456789
-     *  +--------+--------+--------+--------+--------+
-     *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
-     *  +--------+--------+--------+--------+--------+
-     */
     public static func quintetsToOctets(_ input: [UInt8]) throws -> [UInt8] {
         if input.isEmpty { return [] }
         let len = input.count
@@ -180,7 +174,7 @@ internal enum RFC4648 {
         output.append(r4 * pow2(7) + input[5] * pow2(2) + q6)
         output.append(r6 * pow2(5) + input[7])
 
-        let outSize = ceil(Double(len * 5) / Double(8))
+        let outSize = floor(Double(len * 5) / Double(8))
         return [UInt8](output[0 ..< Int(outSize)])
     }
 
@@ -222,7 +216,13 @@ internal enum RFC4648 {
         return [UInt8](output[0 ..< Int(outSize)])
     }
 
-    public static func nBitsToOctets(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
+    /*
+     *  01234567 89012345 67890123 45678901 23456789
+     *  +--------+--------+--------+--------+--------+
+     *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
+     *  +--------+--------+--------+--------+--------+
+     */
+    public static func nBitsToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / n)
@@ -230,10 +230,35 @@ internal enum RFC4648 {
 
         let input = input + Array(repeating: UInt8(0), count: l - input.count)
         let n = UInt8(n)
-        var output = [UInt8]()
-        var rhsOffset: UInt8 = n
+        var j: Int = 0
+        var output = [UInt8](repeating: 0, count: lcm(8, Int(n)) / 8)
+        var rhsOffset: UInt8 = 0
 
-        return []
+        var q: UInt8 = 0, r: UInt8 = 0
+        for i in input {
+            // Handle carry
+            output[j] += r * pow2(8 - rhsOffset)
+
+            rhsOffset += n
+
+            if rhsOffset < 8 {
+                output[j] += i * pow2(8 - rhsOffset)
+            } else {
+                (q, r) = i.quotientAndRemainder(dividingBy: pow2(rhsOffset - 8))
+                output[j] += q
+                j += 1
+            }
+
+            rhsOffset = rhsOffset % 8
+        }
+
+        let outSize = Int(floor(Double(len * Int(n)) / Double(8)))
+
+        guard r == 0, output[outSize...].allSatisfy({ $0 == 0 }) else {
+            throw RFC4648Error.notCanonicalInput
+        }
+
+        return [UInt8](output[0 ..< outSize])
     }
 }
 
