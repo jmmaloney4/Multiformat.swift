@@ -37,39 +37,46 @@ extension Array where Element: FixedWidthInteger {
 enum RFC4648Error: Error {
     case outOfAlphabetCharacter
     case invalidGroupSize
-    case invalidSextet
+    case invalidNTet
     case notCanonicalInput
     case noCorrespondingAlphabetCharacter
 }
 
 internal enum RFC4648 {
-    enum Alphabet {
-        case base64
-        case base64url
-        case base32
-        case base32hex
+    enum Alphabet: String {
+        case octal = "01234567"
+        case base16 = "0123456789abcdef"
+        case base16upper = "0123456789ABCDEF"
+        case base32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+        case base32hex = "0123456789ABCDEFGHIJKLMNOPQRSTUV"
+        case base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+        case base64url = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+
+        func asChars() -> [Character] {
+            return self.rawValue.map { $0 }
+        }
     }
 
-    public static let base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".map { $0 }
-
-    public static func encodeToBase64(_ data: Data) throws -> String {
+    public static func encodeToBase64(_ data: Data, pad: Bool = true) throws -> String {
         let sextets = [UInt8](try [UInt8](data)
             .grouped(3)
-            .map { try RFC4648.octetsToNBits($0, n: 6) }
+            .map { try RFC4648.octetGroupToNTets($0, n: 6) }
             .joined())
-        let encoded = try encode(sextets, withAphabet: base64Alphabet)
-        let padded = self.addPaddingCharacters(string: encoded, forEncodingWithGroupSize: 4)
-        return String(padded)
+        var rv = try encode(sextets, withAphabet: Alphabet.base64.asChars())
+        if pad {
+            rv = self.addPaddingCharacters(string: rv, forEncodingWithGroupSize: 4)
+        }
+        return String(rv)
     }
 
-    static func addPaddingCharacters(string: [Character], paddingCharacter: Character = "=", forEncodingWithGroupSize groupSize: Int) -> [Character] {
+    internal static func addPaddingCharacters(string: [Character], paddingCharacter: Character = "=", forEncodingWithGroupSize groupSize: Int) -> [Character] {
         guard let group = string.grouped(groupSize).last else {
             return []
         }
         return string + Array(repeating: paddingCharacter, count: groupSize - group.count)
     }
 
-    static func encode(_ data: [UInt8], withAphabet alphabet: [Character]) throws -> [Character] {
+    internal static func encode(_ data: [UInt8], withAphabet alphabet: [Character]) throws -> [Character] {
         return try data.map { byte in
             guard byte < alphabet.count else {
                 throw RFC4648Error.noCorrespondingAlphabetCharacter
@@ -80,13 +87,13 @@ internal enum RFC4648 {
 
     public static func decodeBase64(_ string: String) throws -> [UInt8] {
         return [UInt8](try RFC4648
-            .decodeAlphabet(string, alphabet: RFC4648.base64Alphabet)
+            .decodeAlphabet(string, alphabet: Alphabet.base64.asChars())
             .grouped(4)
-            .map { try RFC4648.sextetGroupToOctets($0) }
+            .map { try RFC4648.nTetGroupToOctets($0, n: 6) }
             .joined())
     }
 
-    static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters: Bool = false) throws -> [UInt8] {
+    internal static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters: Bool = false) throws -> [UInt8] {
         if let i = string.firstIndex(of: paddingCharacter), string.suffix(from: i).contains(where: { $0 != paddingCharacter }) {
             throw RFC4648Error.notCanonicalInput
         }
@@ -107,6 +114,7 @@ internal enum RFC4648 {
     }
 
     /*
+     *  Base 64:
      *
      *      +--first octet--+-second octet--+--third octet--+
      *      |7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|7 6 5 4 3 2 1 0|
@@ -114,71 +122,15 @@ internal enum RFC4648 {
      *      |5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|5 4 3 2 1 0|
      *      +--1.index--+--2.index--+--3.index--+--4.index--+
      *
+     *  Base 32:
+     *
+     *      01234567 89012345 67890123 45678901 23456789
+     *      +--------+--------+--------+--------+--------+
+     *      |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
+     *      +--------+--------+--------+--------+--------+
      */
-    public static func sextetGroupToOctets(_ sextets: [UInt8]) throws -> [UInt8] {
-        guard sextets.count <= 4 else {
-            throw RFC4648Error.invalidGroupSize
-        }
 
-        if sextets.isEmpty { return [] }
-
-        guard sextets.count != 1 else {
-            throw RFC4648Error.notCanonicalInput
-        }
-
-        guard sextets.allSatisfy({ $0 < 64 }) else {
-            throw RFC4648Error.invalidSextet
-        }
-
-        var output = [UInt8]()
-
-        let (q1, r1) = sextets[1].quotientAndRemainder(dividingBy: 16)
-        output.append(sextets[0] * 4 + q1)
-
-        if sextets.count < 3 {
-            guard r1 == 0 else {
-                throw RFC4648Error.notCanonicalInput
-            }
-            return output
-        }
-
-        let (q2, r2) = sextets[2].quotientAndRemainder(dividingBy: 4)
-        output.append(r1 * 16 + q2)
-
-        if sextets.count < 4 {
-            guard r2 == 0 else {
-                throw RFC4648Error.notCanonicalInput
-            }
-            return output
-        }
-
-        output.append(r2 * 64 + sextets[3])
-        return output
-    }
-
-    public static func quintetsToOctets(_ input: [UInt8]) throws -> [UInt8] {
-        if input.isEmpty { return [] }
-        let len = input.count
-        guard input.count <= 8 else { throw RFC4648Error.invalidGroupSize }
-        guard input.allSatisfy({ $0 < pow2(5) }) else { throw RFC4648Error.invalidSextet }
-        let input = input + Array(repeating: UInt8(0), count: 8 - input.count)
-
-        var output = [UInt8]()
-        let (q1, r1) = input[1].quotientAndRemainder(dividingBy: pow2(2))
-        let (q3, r3) = input[3].quotientAndRemainder(dividingBy: pow2(4))
-        let (q4, r4) = input[4].quotientAndRemainder(dividingBy: pow2(1))
-        let (q6, r6) = input[6].quotientAndRemainder(dividingBy: pow2(3))
-        output.append(input[0] * pow2(3) + q1)
-        output.append(r1 * pow2(6) + input[2] * pow2(1) + q3)
-        output.append(r3 * pow2(4) + q4)
-        output.append(r4 * pow2(7) + input[5] * pow2(2) + q6)
-        output.append(r6 * pow2(5) + input[7])
-
-        let outSize = floor(Double(len * 5) / Double(8))
-        return [UInt8](output[0 ..< Int(outSize)])
-    }
-
-    public static func octetsToNBits(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
+    internal static func octetGroupToNTets(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / 8)
@@ -216,13 +168,7 @@ internal enum RFC4648 {
         return [UInt8](output[0 ..< Int(outSize)])
     }
 
-    /*
-     *  01234567 89012345 67890123 45678901 23456789
-     *  +--------+--------+--------+--------+--------+
-     *  |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
-     *  +--------+--------+--------+--------+--------+
-     */
-    public static func nBitsToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
+    internal static func nTetGroupToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / n)
@@ -236,8 +182,12 @@ internal enum RFC4648 {
 
         var q: UInt8 = 0, r: UInt8 = 0
         for i in input {
+            if i >= pow2(n) {
+                throw RFC4648Error.invalidNTet
+            }
             // Handle carry
             output[j] += r * pow2(8 - rhsOffset)
+            r = 0
 
             rhsOffset += n
 

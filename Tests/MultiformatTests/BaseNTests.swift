@@ -8,40 +8,49 @@ import XCTest
 @testable import Multiformat
 
 final class BaseNTests: XCTestCase {
-    func testOctetNTetConversion() {}
+    func testOctetNTetConversion() {
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([19, 22, 5, 46], n: 6), [77, 97, 110])
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([19, 22, 4], n: 6), [77, 97])
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([19, 16], n: 6), [77])
 
-    func testSextetOctetConversion() {
-        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 5, 46]), [77, 97, 110])
-        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 22, 4]), [77, 97])
-        XCTAssertEqual(try RFC4648.sextetGroupToOctets([19, 16]), [77])
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([77, 97, 110], n: 6), [19, 22, 5, 46])
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([77, 97], n: 6), [19, 22, 4])
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([77], n: 6), [19, 16])
 
-        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22, 5]))
-        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19, 22]))
-        XCTAssertThrowsError(try RFC4648.sextetGroupToOctets([19]))
+        XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19, 22, 5], n: 6)) { error in
+            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+        }
+        XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19, 22], n: 6)) { error in
+            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+        }
+        XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19], n: 6)) { error in
+            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+        }
 
-        XCTAssertThrowsError(try RFC4648.nBitsToOctets([19, 22, 5], n: 6))
-        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 22, 5, 46], n: 6), [77, 97, 110])
-        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 22, 4], n: 6), [77, 97])
-        XCTAssertEqual(try RFC4648.nBitsToOctets([19, 16], n: 6), [77])
+        // 01100110 01101111  01101111
+        // 01100 11001 10111 10110 11110
+        //
+        // 01100 11001 10111 10110 11110
+        // 01100110 01101111  01101111 0
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([102, 111, 111], n: 5), [12, 25, 23, 22, 30])
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([12, 25, 23, 22, 30], n: 5), [102, 111, 111])
+
+        // Base 16
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([102], n: 4), [6, 6])
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([6, 6], n: 4), [102])
+
+        // Base 8
+        XCTAssertEqual(try RFC4648.octetGroupToNTets([23], n: 3), [0, 5, 6])
+        XCTAssertEqual(try RFC4648.nTetGroupToOctets([0, 5, 6], n: 3), [23])
     }
 
-    func testQuintetOctetConversion() {
-        XCTAssertEqual(try RFC4648.octetsToNBits([102, 111, 111], n: 5), [12, 25, 23, 22, 30])
-        XCTAssertEqual(try RFC4648.quintetsToOctets([12, 25, 23, 22, 30]), [102, 111, 111])
-        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97], n: 6), [19, 22, 4])
-
-        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97, 110], n: 6), [19, 22, 5, 46])
-        XCTAssertEqual(try RFC4648.octetsToNBits([77, 97], n: 6), [19, 22, 4])
-        XCTAssertEqual(try RFC4648.octetsToNBits([77], n: 6), [19, 16])
-    }
-
-    func testToAndFromData() throws {
-        XCTAssertEqual(try RFC4648.decodeBase64("Zm9v"), [UInt8]("foo".utf8))
-
+    func testBase64() throws {
         XCTAssertEqual(try RFC4648.encodeToBase64(Data("Many hands make light work.".utf8)), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu")
         XCTAssertEqual(try RFC4648.decodeBase64("TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu"), [UInt8]("Many hands make light work.".utf8))
 
+        XCTAssertEqual(try RFC4648.decodeBase64("Zm9v"), [UInt8]("foo".utf8))
         XCTAssertEqual(try RFC4648.encodeToBase64(Data("foob".utf8)), "Zm9vYg==")
+        XCTAssertEqual(try RFC4648.encodeToBase64(Data("foob".utf8), pad: false), "Zm9vYg")
     }
 
     func testPow2() {
