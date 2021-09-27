@@ -71,6 +71,10 @@ final class RFC4648Tests: XCTestCase {
         (Data("Many hands make light work.".utf8), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu", true, .base64),
         (Data("foob".utf8), "Zm9vYg==", true, .base64),
         (Data("foob".utf8), "Zm9vYg", false, .base64),
+        (Data("foobar".utf8), "MZXW6YTBOI======", true, .base32),
+        (Data("foob".utf8), "CPNMUOG=", true, .base32hex),
+        (Data("foobar".utf8), "666F6F626172".lowercased(), true, .base16),
+        (Data("".utf8), "", true, .base64url),
     ]
 
     func testBase64() {
