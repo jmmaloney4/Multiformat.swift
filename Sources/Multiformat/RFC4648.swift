@@ -45,11 +45,14 @@ enum RFC4648Error: Error {
 
 internal enum RFC4648 {
     enum Alphabet: String {
+        case binary = "01"
         case octal = "01234567"
         case base16 = "0123456789abcdef"
         case base16upper = "0123456789ABCDEF"
-        case base32 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
-        case base32hex = "0123456789ABCDEFGHIJKLMNOPQRSTUV"
+        case base32 = "abcdefghijklmnopqrstuvwxyz234567"
+        case base32hex = "0123456789abcdefghijklmnopqrstuv"
+        case base32upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
+        case base32hexupper = "0123456789ABCDEFGHIJKLMNOPQRSTUV"
         case base64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
         case base64url = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 

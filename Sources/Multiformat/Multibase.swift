@@ -7,7 +7,11 @@
 import BigInt
 import Foundation
 
-public struct Multibase {
+public enum MultibaseError: Error {
+    case notImplemented
+}
+
+public struct Multibase: CustomStringConvertible {
     public enum Encoding: Character, CaseIterable {
         case identity = "\0"
         case base2 = "0"
@@ -50,24 +54,92 @@ public struct Multibase {
 //    }
 
     init(_ string: String) throws {
-        let encoding = Multibase.identifyEncoding(string: string)
+        let encoding = Multibase.identifyEncoding(string: String(string.prefix(1)))
         guard encoding != nil else {
             throw MultiformatError.invalidFormat
         }
         self.encoding = encoding!
 
-//        switch self.encoding {
-//        case <#pattern#>:
-//            <#code#>
-//        default:
-//            <#code#>
-//        }
+        let index = string.index(after: string.startIndex)
+        let input = String(string[index...])
 
-        self.data = Data()
+        switch self.encoding {
+        case .base64, .base64pad:
+            self.data = try RFC4648.decode(input, as: .base64)
+        case .base64url, .base64urlpad:
+            self.data = try RFC4648.decode(input, as: .base64url)
+        case .base58btc:
+            self.data = Data(input.base58EncodedStringToBytes())
+        case .base32, .base32pad:
+            self.data = try RFC4648.decode(input.uppercased(), as: .base32)
+        case .base32hex, .base32hexpad:
+            self.data = try RFC4648.decode(input.uppercased(), as: .base32hex)
+        case .base32upper, .base32padupper:
+            self.data = try RFC4648.decode(input, as: .base32)
+        case .base32hexupper, .base32hexpadupper:
+            self.data = try RFC4648.decode(input, as: .base64)
+        case .base16:
+            self.data = try RFC4648.decode(input, as: .base16)
+        case .base16upper:
+            self.data = try RFC4648.decode(input, as: .base16upper)
+        case .base8:
+            self.data = try RFC4648.decode(input, as: .octal)
+        case .base2:
+            self.data = try RFC4648.decode(input, as: .binary)
+        case .identity:
+            self.data = Data(input.utf8)
+        default: throw MultibaseError.notImplemented
+        }
+    }
+
+    public var description: String {
+        do {
+            return try self.stringRepresentation()
+        } catch {
+            return "<" + error.localizedDescription + ">"
+        }
+    }
+
+    public func stringRepresentation() throws -> String {
+        switch self.encoding {
+        case .base64:
+            return try RFC4648.encode(self.data, to: .base64, pad: false)
+        case .base64pad:
+            return try RFC4648.encode(self.data, to: .base64, pad: true)
+        case .base64url:
+            return try RFC4648.encode(self.data, to: .base64url, pad: false)
+        case .base64urlpad:
+            return try RFC4648.encode(self.data, to: .base64url, pad: true)
+        case .base32:
+            return try RFC4648.encode(self.data, to: .base32, pad: false)
+        case .base32pad:
+            return try RFC4648.encode(self.data, to: .base32, pad: true)
+        case .base32upper:
+            return try RFC4648.encode(self.data, to: .base32, pad: false).uppercased()
+        case .base32padupper:
+            return try RFC4648.encode(self.data, to: .base32, pad: true).uppercased()
+        case .base32hex:
+            return try RFC4648.encode(self.data, to: .base32hex, pad: false)
+        case .base32hexpad:
+            return try RFC4648.encode(self.data, to: .base32hex, pad: true)
+        case .base32hexupper:
+            return try RFC4648.encode(self.data, to: .base32hex, pad: false).uppercased()
+        case .base32hexpadupper:
+            return try RFC4648.encode(self.data, to: .base32hex, pad: true).uppercased()
+        case .base16:
+            return try RFC4648.encode(self.data, to: .base16, pad: false)
+        case .base16upper:
+            return try RFC4648.encode(self.data, to: .base16, pad: false).uppercased()
+        case .base8:
+            return try RFC4648.encode(self.data, to: .octal, pad: false)
+        case .base2:
+            return try RFC4648.encode(self.data, to: .binary, pad: false)
+        default: throw MultibaseError.notImplemented
+        }
     }
 
     static func identifyEncoding(string: String) -> Encoding? {
-        guard string.count > 1 else {
+        guard !string.isEmpty else {
             return nil
         }
 

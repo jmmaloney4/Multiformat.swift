@@ -8,10 +8,18 @@ import XCTest
 @testable import Multiformat
 
 final class MultibaseTests: XCTestCase {
-    func testEncodingIdentification() throws {
+    func testEncodingIdentification() {
         // bafykbzacedlxaeuckppk5sxhk4bkriewnf3zcojvaklwgzvwaghykrmuyzi3u
         XCTAssertEqual(Multibase.identifyEncoding(string: "bafykbzacedlxaeuckppk5sxhk4bkriewnf3zcojvaklwgzvwaghykrmuyzi3u"), Multibase.Encoding.base32)
         XCTAssertEqual(Multibase.identifyEncoding(string: "zfffs"), Multibase.Encoding.base58btc)
         XCTAssertEqual(Multibase.identifyEncoding(string: "asdfasdf"), nil)
+        XCTAssertEqual(Multibase.identifyEncoding(string: "MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="), .base64pad)
+    }
+
+    func testDecode() throws {
+        XCTAssertEqual(
+            [UInt8](try Multibase("MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw==").data),
+            [0x4D, 0x75, 0x6C, 0x74, 0x69, 0x62, 0x61, 0x73, 0x65, 0x20, 0x69, 0x73, 0x20, 0x61, 0x77, 0x65, 0x73, 0x6F, 0x6D, 0x65, 0x21, 0x20, 0x5C, 0x6F, 0x2F]
+        )
     }
 }

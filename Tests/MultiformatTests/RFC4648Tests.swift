@@ -71,8 +71,8 @@ final class RFC4648Tests: XCTestCase {
         (Data("Many hands make light work.".utf8), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu", true, .base64),
         (Data("foob".utf8), "Zm9vYg==", true, .base64),
         (Data("foob".utf8), "Zm9vYg", false, .base64),
-        (Data("foobar".utf8), "MZXW6YTBOI======", true, .base32),
-        (Data("foob".utf8), "CPNMUOG=", true, .base32hex),
+        (Data("foobar".utf8), "MZXW6YTBOI======", true, .base32upper),
+        (Data("foob".utf8), "CPNMUOG=", true, .base32hexupper),
         (Data("foobar".utf8), "666F6F626172".lowercased(), true, .base16),
         (Data("".utf8), "", true, .base64url),
     ]
@@ -93,5 +93,25 @@ final class RFC4648Tests: XCTestCase {
         XCTAssertEqual(pow2(5), 32)
         XCTAssertEqual(pow2(6), 64)
         XCTAssertEqual(pow2(7), 128)
+    }
+
+    let alphabetSizes = [
+        (.binary, 2, 1),
+        (.octal, 8, 3),
+        (.base16, 16, 4),
+        (.base16upper, 16, 4),
+        (.base32, 32, 5),
+        (.base32hex, 32, 5),
+        (.base32upper, 32, 5),
+        (.base32hexupper, 32, 5),
+        (RFC4648.Alphabet.base64, 64, 6),
+        (RFC4648.Alphabet.base64url, 64, 6),
+    ]
+
+    func testAlphabetSizes() {
+        for (a, c, b) in self.alphabetSizes {
+            XCTAssertEqual(a.asChars().count, c)
+            XCTAssertEqual(a.bitsPerCharacter(), b)
+        }
     }
 }
