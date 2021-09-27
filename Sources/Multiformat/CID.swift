@@ -32,18 +32,18 @@ public struct CID {
     var codec: CodecPrefixes
     var hash: Multihash
 
-    init?(_ string: String) throws {
-        var data: Data?
-        if string.count == 46, string.hasPrefix("Qm") {
-            data = Data(string.base58EncodedStringToBytes())
-        } else {
-            data = multibaseDecode(string)
-        }
-        guard data != nil else {
-            throw CIDError.multibaseDecodeError
-        }
-        try self.init(data!)
-    }
+//    init?(_ string: String) throws {
+//        var data: Data?
+//        if string.count == 46, string.hasPrefix("Qm") {
+//            data = Data(string.base58EncodedStringToBytes())
+//        } else {
+//            data = multibaseDecode(string)
+//        }
+//        guard data != nil else {
+//            throw CIDError.multibaseDecodeError
+//        }
+//        try self.init(data!)
+//    }
 
     init?(_ data: Data) throws {
         if data.count == 34, data.prefix(2) == Data([0x12, 0x20]) {

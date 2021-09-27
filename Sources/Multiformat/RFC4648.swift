@@ -38,6 +38,7 @@ enum RFC4648Error: Error {
     case outOfAlphabetCharacter
     case invalidGroupSize
     case invalidNTet
+    case invalidN
     case notCanonicalInput
     case noCorrespondingAlphabetCharacter
 }
@@ -55,18 +56,41 @@ internal enum RFC4648 {
         func asChars() -> [Character] {
             return self.rawValue.map { $0 }
         }
+
+        func bitsPerCharacter() -> Int {
+            return Int(truncating: NSNumber(value: log2(Double(self.asChars().count))))
+        }
     }
 
-    public static func encodeToBase64(_ data: Data, pad: Bool = true) throws -> String {
-        let sextets = [UInt8](try [UInt8](data)
-            .grouped(3)
-            .map { try RFC4648.octetGroupToNTets($0, n: 6) }
+    public static func encode(_ data: Data, to alphabet: Alphabet, pad: Bool = true) throws -> String {
+        let n = alphabet.bitsPerCharacter()
+        let l = lcm(8, n)
+        // Input Group Size
+        let ig = l / 8
+        // Output Group Size
+        let og = l / n
+        let ntets = [UInt8](try [UInt8](data)
+            .grouped(ig)
+            .map { try RFC4648.octetGroupToNTets($0, n: n) }
             .joined())
-        var rv = try encode(sextets, withAphabet: Alphabet.base64.asChars())
+        var rv = try encode(ntets, withAphabet: alphabet.asChars())
         if pad {
-            rv = self.addPaddingCharacters(string: rv, forEncodingWithGroupSize: 4)
+            rv = self.addPaddingCharacters(string: rv, forEncodingWithGroupSize: og)
         }
         return String(rv)
+    }
+
+    public static func decode(_ string: String, as alphabet: Alphabet) throws -> Data {
+        let n = alphabet.bitsPerCharacter()
+        let l = lcm(8, n)
+        // Input Group Size
+        let ig = l / n
+        let octets = [UInt8](try RFC4648
+            .decodeAlphabet(string, alphabet: alphabet.asChars())
+            .grouped(ig)
+            .map { try RFC4648.nTetGroupToOctets($0, n: n) }
+            .joined())
+        return Data(octets)
     }
 
     internal static func addPaddingCharacters(string: [Character], paddingCharacter: Character = "=", forEncodingWithGroupSize groupSize: Int) -> [Character] {
@@ -83,14 +107,6 @@ internal enum RFC4648 {
             }
             return alphabet[Int(byte)]
         }
-    }
-
-    public static func decodeBase64(_ string: String) throws -> [UInt8] {
-        return [UInt8](try RFC4648
-            .decodeAlphabet(string, alphabet: Alphabet.base64.asChars())
-            .grouped(4)
-            .map { try RFC4648.nTetGroupToOctets($0, n: 6) }
-            .joined())
     }
 
     internal static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters: Bool = false) throws -> [UInt8] {
@@ -128,9 +144,13 @@ internal enum RFC4648 {
      *      +--------+--------+--------+--------+--------+
      *      |< 1 >< 2| >< 3 ><|.4 >< 5.|>< 6 ><.|7 >< 8 >|
      *      +--------+--------+--------+--------+--------+
+     *
+     *  Base 2:
+     *      012345678
+     *
      */
-
-    internal static func octetGroupToNTets(_ input: [UInt8], n: Int = 5) throws -> [UInt8] {
+    internal static func octetGroupToNTets(_ input: [UInt8], n: Int) throws -> [UInt8] {
+        guard n > 0, n <= 8 else { throw RFC4648Error.invalidN }
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / 8)
@@ -139,16 +159,16 @@ internal enum RFC4648 {
         let input = input + Array(repeating: UInt8(0), count: l - input.count)
         let n = UInt8(n)
         var output = [UInt8]()
-        var rhsOffset: UInt8 = n
+        var offset: UInt8 = n
         var i = 0
         var octet: UInt8 = input[i]
         var carry: UInt8 = 0
 
         while true {
-            let (q, r) = octet.quotientAndRemainder(dividingBy: pow2(8 - rhsOffset))
-            output.append(carry * pow2(rhsOffset) + q)
-            rhsOffset = rhsOffset + n
-            if rhsOffset < 8 {
+            let (q, r) = octet.quotientAndRemainder(dividingBy: pow2(8 - offset))
+            output.append(carry * pow2(offset) + q)
+            offset = offset + n
+            if offset < 8 {
                 octet = r
                 carry = 0
             } else {
@@ -161,7 +181,7 @@ internal enum RFC4648 {
                     break
                 }
             }
-            rhsOffset = rhsOffset % 8
+            offset = offset % 8
         }
 
         let outSize = ceil(Double(8 * len) / Double(n))
@@ -169,40 +189,49 @@ internal enum RFC4648 {
     }
 
     internal static func nTetGroupToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
+        // Check for basic failure modes
+        guard n > 0, n <= 8 else { throw RFC4648Error.invalidN }
         if input.isEmpty { return [] }
-        let len = input.count
-        let l = (lcm(8, n) / n)
-        guard input.count <= l else { throw RFC4648Error.invalidGroupSize }
+        let m = (lcm(8, n) / n)
+        guard input.count <= m else { throw RFC4648Error.invalidGroupSize }
 
+        // Pad out input with zeros
+        let l = input.count
         let input = input + Array(repeating: UInt8(0), count: l - input.count)
+
         let n = UInt8(n)
+        // Index into output array
         var j: Int = 0
         var output = [UInt8](repeating: 0, count: lcm(8, Int(n)) / 8)
-        var rhsOffset: UInt8 = 0
-
+        // Offset Mod 8
+        var offset: UInt8 = 0
+        // Quotient and Remainder
         var q: UInt8 = 0, r: UInt8 = 0
+
         for i in input {
-            if i >= pow2(n) {
-                throw RFC4648Error.invalidNTet
-            }
-            // Handle carry
-            output[j] += r * pow2(8 - rhsOffset)
+            if i >= pow2(n) { throw RFC4648Error.invalidNTet }
+
+            // Handle carry. Take the least significant part of the n-tet (r) and
+            // move it to the most significant part of the next output byte.
+            output[j] += r * pow2(8 - offset)
+            // We have handled the remainder now.
             r = 0
 
-            rhsOffset += n
-
-            if rhsOffset < 8 {
-                output[j] += i * pow2(8 - rhsOffset)
+            offset += n
+            if offset < 8 {
+                // We have not crossed a byte boundary, so the entire input n-tet is in the current output byte.
+                output[j] += i * pow2(8 - offset)
             } else {
-                (q, r) = i.quotientAndRemainder(dividingBy: pow2(rhsOffset - 8))
+                // We have crossed a byte boundary, we need to split the most and least significant halves of the input n-tet
+                (q, r) = i.quotientAndRemainder(dividingBy: pow2(offset - 8))
                 output[j] += q
                 j += 1
             }
 
-            rhsOffset = rhsOffset % 8
+            offset = offset % 8
         }
 
-        let outSize = Int(floor(Double(len * Int(n)) / Double(8)))
+        let outSize = Int(floor(Double(l * Int(n)) / Double(8)))
 
         guard r == 0, output[outSize...].allSatisfy({ $0 == 0 }) else {
             throw RFC4648Error.notCanonicalInput

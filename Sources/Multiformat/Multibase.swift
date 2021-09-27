@@ -9,8 +9,30 @@ import Foundation
 
 public struct Multibase {
     public enum Encoding: Character, CaseIterable {
+        case identity = "\0"
+        case base2 = "0"
+        case base8 = "7"
+        case base10 = "9"
+        case base16 = "f"
+        case base16upper = "F"
+        case base32hex = "v"
+        case base32hexupper = "V"
+        case base32hexpad = "t"
+        case base32hexpadupper = "T"
         case base32 = "b"
+        case base32upper = "B"
+        case base32pad = "c"
+        case base32padupper = "C"
+        case base32z = "h"
+        case base36 = "k"
+        case base36upper = "K"
         case base58btc = "z"
+        case base58flickr = "Z"
+        case base64 = "m"
+        case base64pad = "M"
+        case base64url = "u"
+        case base64urlpad = "U"
+        case proquint = "p"
     }
 
     var encoding: Encoding
@@ -33,6 +55,14 @@ public struct Multibase {
             throw MultiformatError.invalidFormat
         }
         self.encoding = encoding!
+
+//        switch self.encoding {
+//        case <#pattern#>:
+//            <#code#>
+//        default:
+//            <#code#>
+//        }
+
         self.data = Data()
     }
 
@@ -41,30 +71,6 @@ public struct Multibase {
             return nil
         }
 
-        return Encoding.allCases.filter { $0.rawValue == string[string.startIndex] }.first
-    }
-}
-
-func multibaseDecode(_ input: String) -> Data? {
-    let rest = input[input.index(after: input.startIndex)...]
-    print(input[input.startIndex], Multibase.Encoding.base58btc.rawValue)
-    switch input[input.startIndex] {
-    case Multibase.Encoding.base58btc.rawValue:
-        return Data(String(rest).base58EncodedStringToBytes())
-    default:
-        return nil
-    }
-}
-
-func multibaseEncode(_ data: Data, base: Multibase.Encoding) -> String? {
-    switch base {
-    case .base58btc:
-        let encoded = [UInt8](data).base58EncodedString()
-        guard encoded != nil else {
-            return nil
-        }
-        return String(Multibase.Encoding.base58btc.rawValue) + encoded!
-    default:
-        return nil
+        return Encoding.allCases.filter { $0.rawValue == string.first! }.first
     }
 }
