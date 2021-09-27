@@ -66,13 +66,18 @@ final class RFC4648Tests: XCTestCase {
         }
     }
 
-    func testBase64() throws {
-        XCTAssertEqual(try RFC4648.encode(Data("Many hands make light work.".utf8), to: .base64), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu")
-        XCTAssertEqual(try RFC4648.decode("TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu", as: .base64), Data("Many hands make light work.".utf8))
+    let testCases = [
+        (Data([0, 0, 0, 0, 0]), "AAAAAAA=", true, RFC4648.Alphabet.base64),
+        (Data("Many hands make light work.".utf8), "TWFueSBoYW5kcyBtYWtlIGxpZ2h0IHdvcmsu", true, .base64),
+        (Data("foob".utf8), "Zm9vYg==", true, .base64),
+        (Data("foob".utf8), "Zm9vYg", false, .base64),
+    ]
 
-        XCTAssertEqual(try RFC4648.decode("Zm9v", as: .base64), Data("foo".utf8))
-        XCTAssertEqual(try RFC4648.encode(Data("foob".utf8), to: .base64), "Zm9vYg==")
-        XCTAssertEqual(try RFC4648.encode(Data("foob".utf8), to: .base64, pad: false), "Zm9vYg")
+    func testBase64() {
+        for (d, s, p, a) in self.testCases {
+            XCTAssertEqual(try RFC4648.decode(s, as: a), d)
+            XCTAssertEqual(try RFC4648.encode(d, to: a, pad: p), s)
+        }
     }
 
     func testPow2() {
