@@ -6,34 +6,6 @@
 
 import Foundation
 
-public extension Data {
-    func asRFC4648Base64EncodedString(withPadding _: Bool = true) throws -> String {
-        return ""
-    }
-}
-
-public extension String {
-    func decodeRFC4648Base64EncodedString() throws -> Data {
-        return Data()
-    }
-}
-
-extension Array where Element: FixedWidthInteger {
-    var leadingZeroBitCount: Int {
-        if self.count < 1 {
-            return 0
-        } else if self[0] != 0 {
-            return self[0].leadingZeroBitCount
-        } else {
-            var bits = self.prefix(while: { b in b == 0 }).count * 8
-            if let index = self.firstIndex(where: { b in b != 0 }) {
-                bits += self[index].leadingZeroBitCount
-            }
-            return bits
-        }
-    }
-}
-
 enum RFC4648Error: Error {
     case outOfAlphabetCharacter
     case invalidGroupSize
@@ -95,6 +67,8 @@ internal enum RFC4648 {
             .joined())
         return Data(octets)
     }
+
+    // MARK: Internal Code
 
     internal static func addPaddingCharacters(string: [Character], paddingCharacter: Character = "=", forEncodingWithGroupSize groupSize: Int) -> [Character] {
         guard let group = string.grouped(groupSize).last else {
@@ -244,12 +218,14 @@ internal enum RFC4648 {
     }
 }
 
-@inlinable internal func pow2(_ x: UInt8) -> UInt8 {
+// MARK: Utility Functions
+
+private func pow2(_ x: UInt8) -> UInt8 {
     if x == 0 { return 1 }
     return 2 << (x - 1)
 }
 
-func gcd(_ a: Int, _ b: Int) -> Int {
+private func gcd(_ a: Int, _ b: Int) -> Int {
     let r = a % b
     if r != 0 {
         return gcd(b, r)
@@ -260,4 +236,16 @@ func gcd(_ a: Int, _ b: Int) -> Int {
 
 func lcm(_ m: Int, _ n: Int) -> Int {
     return m * n / gcd(m, n)
+}
+
+private extension Array {
+    func grouped(_ size: Int) -> [[Element]] {
+        var rv = [[Element]]()
+        let range = stride(from: 0, to: self.count, by: size)
+        for i in range {
+            let end = Swift.min(i + size, self.count)
+            rv.append(Array(self[i ..< end]))
+        }
+        return rv
+    }
 }
