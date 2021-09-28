@@ -44,8 +44,7 @@ public struct CID: CustomStringConvertible {
         if string.count == 46, string.hasPrefix("Qm") {
             data = Data(string.base58EncodedStringToBytes())
         } else {
-            let mb = try Multibase(string)
-            data = mb.data
+            data = try Data(fromMultibaseEncodedString: string)
         }
         try self.init(data)
     }
