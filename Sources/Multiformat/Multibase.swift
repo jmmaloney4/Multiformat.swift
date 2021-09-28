@@ -52,6 +52,11 @@ public struct Multibase: CustomStringConvertible {
         try self.init(string)
     }
 
+    public init(_ data: Data, withEncoding encoding: Encoding) {
+        self.data = data
+        self.encoding = encoding
+    }
+
     init(_ string: String) throws {
         let encoding = Multibase.identifyEncoding(string: String(string.prefix(1)))
         guard encoding != nil else {

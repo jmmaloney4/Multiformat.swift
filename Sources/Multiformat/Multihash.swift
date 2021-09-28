@@ -47,13 +47,4 @@ public struct Multihash {
         self.code = code
         self.digest = hash
     }
-
-    // @todo error handling
-    public init(base58 input: String) throws {
-        try self.init(Data(input.base58EncodedStringToBytes()))
-    }
-
-    public func toBase58() -> String? {
-        return [UInt8](self.bytes).base58EncodedString()
-    }
 }
