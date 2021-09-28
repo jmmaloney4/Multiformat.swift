@@ -4,9 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import Base58
 import Foundation
-import Multihash
 import VarInt
 
 enum CIDError: Error {
@@ -29,7 +27,7 @@ public struct CID {
     }
 
     var version: Version
-    var codec: CodecPrefixes
+    var codec: CodecPrefix
     var hash: Multihash
 
     init?(_ string: String) throws {
@@ -51,7 +49,7 @@ public struct CID {
             // CIDv0
             self.version = .v0
             self.codec = .dag_pb
-            self.hash = Multihash(code: .sha2256, hash: data[data.startIndex.advanced(by: 2)...])
+            self.hash = Multihash(code: .sha2_256, hash: data[data.startIndex.advanced(by: 2)...])
         } else {
             // CIDv1
             self.version = .v1
@@ -65,20 +63,14 @@ public struct CID {
             buf = [UInt8](buf[c1...])
 
             let (codecid, c2) = uVarInt(buf)
-            let codec = CodecPrefixes(rawValue: codecid)
+            let codec = CodecPrefix(rawValue: codecid)
             guard codec != nil else {
                 throw CIDError.unknownMulticodec
             }
             self.codec = codec!
             buf = [UInt8](buf[c2...])
 
-            let (hashTypeCode, c3) = uVarInt(buf)
-            buf = [UInt8](buf[c3...])
-            let hashType = Type(rawValue: UInt8(hashTypeCode))
-            guard hashType != nil else {
-                throw CIDError.unknownMultihash
-            }
-            self.hash = Multihash(code: hashType!, hash: Data(buf))
+            self.hash = try Multihash(Data(buf))
         }
     }
 }

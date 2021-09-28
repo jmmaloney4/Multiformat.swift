@@ -2,17 +2,8 @@
   "object": {
     "pins": [
       {
-        "package": "Base58",
-        "repositoryURL": "https://github.com/jmmaloney4/Base58.swift.git",
-        "state": {
-          "branch": "master",
-          "revision": "1479f14923c10f0e1e33b49eda7e49946abf0b77",
-          "version": null
-        }
-      },
-      {
         "package": "BigInt",
-        "repositoryURL": "https://github.com/attaswift/BigInt",
+        "repositoryURL": "https://github.com/attaswift/BigInt.git",
         "state": {
           "branch": null,
           "revision": "0ed110f7555c34ff468e72e1686e59721f2b0da6",
@@ -20,12 +11,12 @@
         }
       },
       {
-        "package": "Multihash",
-        "repositoryURL": "https://github.com/jmmaloney4/Multihash.swift.git",
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto.git",
         "state": {
-          "branch": "master",
-          "revision": "a15f987ee983b8b0540e4f552f9cf798a251c02b",
-          "version": null
+          "branch": null,
+          "revision": "127d3745c37b5705e4bc8d16c7951c48dcc3332c",
+          "version": "2.0.0"
         }
       },
       {
