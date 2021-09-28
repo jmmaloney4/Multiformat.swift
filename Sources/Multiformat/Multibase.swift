@@ -42,16 +42,16 @@ public struct Multibase: CustomStringConvertible {
     var encoding: Encoding
     var data: Data
 
-//    public func encode(to encoder: Encoder) throws {
-//        var container = encoder.unkeyedContainer()
-//
-//    }
-//
-//    public init(from decoder: Decoder) throws {
-//        var container = try decoder.unkeyedContainer()
-//        try container.decode(String.self)
-//
-//    }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.unkeyedContainer()
+        try container.encode(try self.stringRepresentation())
+    }
+
+    public init(from decoder: Decoder) throws {
+        var container = try decoder.unkeyedContainer()
+        let string = try container.decode(String.self)
+        try self.init(string)
+    }
 
     init(_ string: String) throws {
         let encoding = Multibase.identifyEncoding(string: String(string.prefix(1)))
