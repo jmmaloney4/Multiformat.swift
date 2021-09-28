@@ -31,9 +31,15 @@ private let radix = BigUInt(alphabet.count)
 
 public extension Array where Element == UInt8 {
     func base58EncodedString() -> String? {
+        return Data(self).base58EncodedString()
+    }
+}
+
+public extension Data {
+    func base58EncodedString() -> String? {
         var bytes = [UInt8]()
 
-        var integer = BigUInt(Data(self))
+        var integer = BigUInt(self)
 
         while integer > 0 {
             let (quotient, remainder) = integer.quotientAndRemainder(dividingBy: radix)

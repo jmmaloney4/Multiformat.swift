@@ -20,7 +20,7 @@ enum MultiformatError: Error {
     case notInAlphabet
 }
 
-public struct CID {
+public struct CID: CustomStringConvertible {
     public enum Version: Int {
         case v0 = 0
         case v1 = 1
@@ -30,21 +30,27 @@ public struct CID {
     var codec: CodecPrefix
     var hash: Multihash
 
-    init?(_ string: String) throws {
-        var data: Data?
+    public var description: String {
+        switch self.version {
+        case .v0:
+            return "Qm\(self.hash.digest.base58EncodedString()!)"
+        case .v1:
+            return ""
+        }
+    }
+
+    init(_ string: String) throws {
+        var data: Data
         if string.count == 46, string.hasPrefix("Qm") {
             data = Data(string.base58EncodedStringToBytes())
         } else {
             let mb = try Multibase(string)
             data = mb.data
         }
-        guard data != nil else {
-            throw CIDError.multibaseDecodeError
-        }
-        try self.init(data!)
+        try self.init(data)
     }
 
-    init?(_ data: Data) throws {
+    init(_ data: Data) throws {
         if data.count == 34, data.prefix(2) == Data([0x12, 0x20]) {
             // CIDv0
             self.version = .v0

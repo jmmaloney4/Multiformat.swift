@@ -57,16 +57,20 @@ public struct Multibase: CustomStringConvertible {
         self.encoding = encoding
     }
 
-    init(_ string: String) throws {
+    public init(_ string: String) throws {
         let encoding = Multibase.identifyEncoding(string: String(string.prefix(1)))
         guard encoding != nil else {
             throw MultiformatError.invalidFormat
         }
-        self.encoding = encoding!
 
         let index = string.index(after: string.startIndex)
         let input = String(string[index...])
 
+        try self.init(input, withEncoding: encoding!)
+    }
+
+    init(_ input: String, withEncoding encoding: Encoding) throws {
+        self.encoding = encoding
         switch self.encoding {
         case .base64, .base64pad:
             self.data = try RFC4648.decode(input, as: .base64)
