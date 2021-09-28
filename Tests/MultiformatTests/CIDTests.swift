@@ -8,5 +8,9 @@ import XCTest
 @testable import Multiformat
 
 final class CIDTests: XCTestCase {
-    func testExample() throws {}
+    func testExample() throws {
+        let cid = try CID("bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a")
+        print(cid!)
+        print(cid!.hash)
+    }
 }

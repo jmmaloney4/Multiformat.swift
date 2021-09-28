@@ -220,7 +220,7 @@ internal enum RFC4648 {
 
 // MARK: Utility Functions
 
-private func pow2(_ x: UInt8) -> UInt8 {
+internal func pow2(_ x: UInt8) -> UInt8 {
     if x == 0 { return 1 }
     return 2 << (x - 1)
 }
@@ -234,11 +234,11 @@ private func gcd(_ a: Int, _ b: Int) -> Int {
     }
 }
 
-func lcm(_ m: Int, _ n: Int) -> Int {
+private func lcm(_ m: Int, _ n: Int) -> Int {
     return m * n / gcd(m, n)
 }
 
-private extension Array {
+internal extension Array {
     func grouped(_ size: Int) -> [[Element]] {
         var rv = [[Element]]()
         let range = stride(from: 0, to: self.count, by: size)

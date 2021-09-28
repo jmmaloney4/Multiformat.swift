@@ -32,30 +32,33 @@ public struct CID {
     var codec: CodecPrefixes
     var hash: Multihash
 
-//    init?(_ string: String) throws {
-//        var data: Data?
-//        if string.count == 46, string.hasPrefix("Qm") {
-//            data = Data(string.base58EncodedStringToBytes())
-//        } else {
-//            data = multibaseDecode(string)
-//        }
-//        guard data != nil else {
-//            throw CIDError.multibaseDecodeError
-//        }
-//        try self.init(data!)
-//    }
+    init?(_ string: String) throws {
+        var data: Data?
+        if string.count == 46, string.hasPrefix("Qm") {
+            data = Data(string.base58EncodedStringToBytes())
+        } else {
+            let mb = try Multibase(string)
+            data = mb.data
+        }
+        guard data != nil else {
+            throw CIDError.multibaseDecodeError
+        }
+        try self.init(data!)
+    }
 
     init?(_ data: Data) throws {
         if data.count == 34, data.prefix(2) == Data([0x12, 0x20]) {
+            // CIDv0
             self.version = .v0
             self.codec = .dag_pb
             self.hash = Multihash(code: .sha2256, hash: data[data.startIndex.advanced(by: 2)...])
         } else {
+            // CIDv1
             self.version = .v1
 
             // Decode CID version
             var buf = [UInt8](data)
-            let (cidv, c1) = varInt(buf)
+            let (cidv, c1) = uVarInt(buf)
             guard cidv == self.version.rawValue else {
                 throw CIDError.invalidFormat
             }
@@ -69,7 +72,7 @@ public struct CID {
             self.codec = codec!
             buf = [UInt8](buf[c2...])
 
-            let (hashTypeCode, c3) = varInt(buf)
+            let (hashTypeCode, c3) = uVarInt(buf)
             buf = [UInt8](buf[c3...])
             let hashType = Type(rawValue: UInt8(hashTypeCode))
             guard hashType != nil else {

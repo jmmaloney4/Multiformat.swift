@@ -71,9 +71,9 @@ public struct Multibase: CustomStringConvertible {
         case .base58btc:
             self.data = Data(input.base58EncodedStringToBytes())
         case .base32, .base32pad:
-            self.data = try RFC4648.decode(input.uppercased(), as: .base32)
+            self.data = try RFC4648.decode(input, as: .base32)
         case .base32hex, .base32hexpad:
-            self.data = try RFC4648.decode(input.uppercased(), as: .base32hex)
+            self.data = try RFC4648.decode(input, as: .base32hex)
         case .base32upper, .base32padupper:
             self.data = try RFC4648.decode(input, as: .base32)
         case .base32hexupper, .base32hexpadupper:
