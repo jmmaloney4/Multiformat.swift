@@ -30,17 +30,15 @@ private let alphabet = [UInt8]("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnop
 private let radix = BigUInt(alphabet.count)
 
 public extension Array where Element == UInt8 {
-    func base58EncodedString() -> String? {
-        return Data(self).base58EncodedString()
+    func base58EncodedString() -> String {
+        Data(self).base58EncodedString()
     }
 }
 
 public extension Data {
-    func base58EncodedString() -> String? {
+    func base58EncodedString() -> String {
         var bytes = [UInt8]()
-
         var integer = BigUInt(self)
-
         while integer > 0 {
             let (quotient, remainder) = integer.quotientAndRemainder(dividingBy: radix)
             bytes.insert(alphabet[Int(remainder)], at: 0)
@@ -48,26 +46,28 @@ public extension Data {
         }
 
         bytes.insert(contentsOf: Array(prefix { $0 == 0 }).map { _ in alphabet[0] }, at: 0)
-        return String(bytes: bytes, encoding: .utf8)
+        // Given that the alphabet characters are all utf8 characters, we
+        // should have no problem encoding this string.
+        return String(bytes: bytes, encoding: .utf8)!
     }
 }
 
 public extension String {
     // @todo should this be done with the decode/encode generic function?
     // @todo better naming?
-    func base58EncodedStringToBytes() -> [UInt8] {
+    func base58EncodedData() throws -> Data {
         var answer = BigUInt(0)
         var i = BigUInt(1)
 
         for char in utf8.reversed() {
             guard let index = alphabet.firstIndex(of: char) else {
-                return []
+                throw MultibaseError.outOfAlphabetCharacter
             }
 
             answer += (i * BigUInt(index))
             i *= radix
         }
 
-        return Array(utf8.prefix { i in i == alphabet[0] } + answer.serialize())
+        return Data(Array(utf8.prefix { i in i == alphabet[0] } + answer.serialize()))
     }
 }

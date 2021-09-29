@@ -6,15 +6,6 @@
 
 import Foundation
 
-enum RFC4648Error: Error {
-    case outOfAlphabetCharacter
-    case invalidGroupSize
-    case invalidNTet
-    case invalidN
-    case notCanonicalInput
-    case noCorrespondingAlphabetCharacter
-}
-
 internal enum RFC4648 {
     enum Alphabet: String {
         case binary = "01"
@@ -29,11 +20,11 @@ internal enum RFC4648 {
         case base64url = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 
         func asChars() -> [Character] {
-            return self.rawValue.map { $0 }
+            self.rawValue.map { $0 }
         }
 
         func bitsPerCharacter() -> Int {
-            return Int(truncating: NSNumber(value: log2(Double(self.asChars().count))))
+            Int(truncating: NSNumber(value: log2(Double(self.asChars().count))))
         }
     }
 
@@ -78,9 +69,9 @@ internal enum RFC4648 {
     }
 
     internal static func encode(_ data: [UInt8], withAphabet alphabet: [Character]) throws -> [Character] {
-        return try data.map { byte in
+        try data.map { byte in
             guard byte < alphabet.count else {
-                throw RFC4648Error.noCorrespondingAlphabetCharacter
+                throw MultibaseError.noCorrespondingAlphabetCharacter
             }
             return alphabet[Int(byte)]
         }
@@ -88,7 +79,7 @@ internal enum RFC4648 {
 
     internal static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters: Bool = false) throws -> [UInt8] {
         if let i = string.firstIndex(of: paddingCharacter), string.suffix(from: i).contains(where: { $0 != paddingCharacter }) {
-            throw RFC4648Error.notCanonicalInput
+            throw MultibaseError.notCanonicalInput
         }
         return try string
             .filter { $0 != paddingCharacter }
@@ -96,7 +87,7 @@ internal enum RFC4648 {
             .filter { i in
                 guard i != nil else {
                     if !allowOutOfAlphabetCharacters {
-                        throw RFC4648Error.outOfAlphabetCharacter
+                        throw MultibaseError.outOfAlphabetCharacter
                     } else {
                         return false
                     }
@@ -127,11 +118,11 @@ internal enum RFC4648 {
      *
      */
     internal static func octetGroupToNTets(_ input: [UInt8], n: Int) throws -> [UInt8] {
-        guard n > 0, n <= 8 else { throw RFC4648Error.invalidN }
+        guard n > 0, n <= 8 else { throw MultibaseError.invalidN }
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / 8)
-        guard input.count <= l else { throw RFC4648Error.invalidGroupSize }
+        guard input.count <= l else { throw MultibaseError.invalidGroupSize }
 
         let input = input + Array(repeating: UInt8(0), count: l - input.count)
         let n = UInt8(n)
@@ -167,10 +158,10 @@ internal enum RFC4648 {
 
     internal static func nTetGroupToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
         // Check for basic failure modes
-        guard n > 0, n <= 8 else { throw RFC4648Error.invalidN }
+        guard n > 0, n <= 8 else { throw MultibaseError.invalidN }
         if input.isEmpty { return [] }
         let m = (lcm(8, n) / n)
-        guard input.count <= m else { throw RFC4648Error.invalidGroupSize }
+        guard input.count <= m else { throw MultibaseError.invalidGroupSize }
 
         // Pad out input with zeros
         let l = input.count
@@ -186,7 +177,7 @@ internal enum RFC4648 {
         var q: UInt8 = 0, r: UInt8 = 0
 
         for i in input {
-            if i >= pow2(n) { throw RFC4648Error.invalidNTet }
+            if i >= pow2(n) { throw MultibaseError.invalidNTet }
 
             // Handle carry. Take the least significant part of the n-tet (r) and
             // move it to the most significant part of the next output byte.
@@ -211,7 +202,7 @@ internal enum RFC4648 {
         let outSize = Int(floor(Double(l * Int(n)) / Double(8)))
 
         guard r == 0, output[outSize...].allSatisfy({ $0 == 0 }) else {
-            throw RFC4648Error.notCanonicalInput
+            throw MultibaseError.notCanonicalInput
         }
 
         return [UInt8](output[0 ..< outSize])
@@ -235,7 +226,7 @@ private func gcd(_ a: Int, _ b: Int) -> Int {
 }
 
 private func lcm(_ m: Int, _ n: Int) -> Int {
-    return m * n / gcd(m, n)
+    m * n / gcd(m, n)
 }
 
 internal extension Array {

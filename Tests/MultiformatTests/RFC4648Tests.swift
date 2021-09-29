@@ -40,29 +40,29 @@ final class RFC4648Tests: XCTestCase {
 
     func testCanonicalInput() {
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19, 22, 5], n: 6)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+            XCTAssertEqual(error as! MultibaseError, .notCanonicalInput)
         }
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19, 22], n: 6)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+            XCTAssertEqual(error as! MultibaseError, .notCanonicalInput)
         }
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19], n: 6)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+            XCTAssertEqual(error as! MultibaseError, .notCanonicalInput)
         }
 
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([1], n: 1)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .notCanonicalInput)
+            XCTAssertEqual(error as! MultibaseError, .notCanonicalInput)
         }
     }
 
     func testInvalidN() {
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([19], n: 12)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .invalidN)
+            XCTAssertEqual(error as! MultibaseError, .invalidN)
         }
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([200], n: 9)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .invalidN)
+            XCTAssertEqual(error as! MultibaseError, .invalidN)
         }
         XCTAssertThrowsError(try RFC4648.nTetGroupToOctets([12], n: 0)) { error in
-            XCTAssertEqual(error as! RFC4648Error, .invalidN)
+            XCTAssertEqual(error as! MultibaseError, .invalidN)
         }
     }
 

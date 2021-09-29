@@ -8,6 +8,12 @@ import Foundation
 
 public enum MultibaseError: Error {
     case notImplemented
+    case outOfAlphabetCharacter
+    case invalidGroupSize
+    case invalidNTet
+    case invalidN
+    case notCanonicalInput
+    case noCorrespondingAlphabetCharacter
 }
 
 public enum Multibase {
@@ -57,7 +63,7 @@ public enum Multibase {
         case .base64url, .base64urlpad:
             return try RFC4648.decode(input, as: .base64url)
         case .base58btc:
-            return Data(input.base58EncodedStringToBytes())
+            return try input.base58EncodedData()
         case .base32, .base32pad:
             return try RFC4648.decode(input, as: .base32)
         case .base32hex, .base32hexpad:
@@ -80,42 +86,49 @@ public enum Multibase {
         }
     }
 
-    public static func encode(_ data: Data, withEncoding encoding: Encoding) throws -> String {
+    public static func encode(_ data: Data, withEncoding encoding: Encoding, prefix: Bool = true) throws -> String {
+        var rv: String
         switch encoding {
         case .base64:
-            return try RFC4648.encode(data, to: .base64, pad: false)
+            rv = try RFC4648.encode(data, to: .base64, pad: false)
         case .base64pad:
-            return try RFC4648.encode(data, to: .base64, pad: true)
+            rv = try RFC4648.encode(data, to: .base64, pad: true)
         case .base64url:
-            return try RFC4648.encode(data, to: .base64url, pad: false)
+            rv = try RFC4648.encode(data, to: .base64url, pad: false)
         case .base64urlpad:
-            return try RFC4648.encode(data, to: .base64url, pad: true)
+            rv = try RFC4648.encode(data, to: .base64url, pad: true)
+        case .base58btc:
+            rv = data.base58EncodedString()
         case .base32:
-            return try RFC4648.encode(data, to: .base32, pad: false)
+            rv = try RFC4648.encode(data, to: .base32, pad: false)
         case .base32pad:
-            return try RFC4648.encode(data, to: .base32, pad: true)
+            rv = try RFC4648.encode(data, to: .base32, pad: true)
         case .base32upper:
-            return try RFC4648.encode(data, to: .base32, pad: false).uppercased()
+            rv = try RFC4648.encode(data, to: .base32, pad: false).uppercased()
         case .base32padupper:
-            return try RFC4648.encode(data, to: .base32, pad: true).uppercased()
+            rv = try RFC4648.encode(data, to: .base32, pad: true).uppercased()
         case .base32hex:
-            return try RFC4648.encode(data, to: .base32hex, pad: false)
+            rv = try RFC4648.encode(data, to: .base32hex, pad: false)
         case .base32hexpad:
-            return try RFC4648.encode(data, to: .base32hex, pad: true)
+            rv = try RFC4648.encode(data, to: .base32hex, pad: true)
         case .base32hexupper:
-            return try RFC4648.encode(data, to: .base32hex, pad: false).uppercased()
+            rv = try RFC4648.encode(data, to: .base32hex, pad: false).uppercased()
         case .base32hexpadupper:
-            return try RFC4648.encode(data, to: .base32hex, pad: true).uppercased()
+            rv = try RFC4648.encode(data, to: .base32hex, pad: true).uppercased()
         case .base16:
-            return try RFC4648.encode(data, to: .base16, pad: false)
+            rv = try RFC4648.encode(data, to: .base16, pad: false)
         case .base16upper:
-            return try RFC4648.encode(data, to: .base16, pad: false).uppercased()
+            rv = try RFC4648.encode(data, to: .base16, pad: false).uppercased()
         case .base8:
-            return try RFC4648.encode(data, to: .octal, pad: false)
+            rv = try RFC4648.encode(data, to: .octal, pad: false)
         case .base2:
-            return try RFC4648.encode(data, to: .binary, pad: false)
+            rv = try RFC4648.encode(data, to: .binary, pad: false)
         default: throw MultibaseError.notImplemented
         }
+        if prefix {
+            rv = String(encoding.rawValue) + rv
+        }
+        return rv
     }
 
     static func identifyEncoding(string: String) -> Encoding? {
@@ -136,7 +149,7 @@ public extension Data {
         self.init(try Multibase.decode(string, withEncoding: encoding))
     }
 
-    func multibaseEncodedString(_ encoding: Multibase.Encoding) throws -> String {
-        return try Multibase.encode(self, withEncoding: encoding)
+    func multibaseEncodedString(_ encoding: Multibase.Encoding, prefix: Bool = true) throws -> String {
+        try Multibase.encode(self, withEncoding: encoding, prefix: prefix)
     }
 }

@@ -31,18 +31,28 @@ public struct CID: CustomStringConvertible {
     var hash: Multihash
 
     public var description: String {
-        switch self.version {
-        case .v0:
-            return "Qm\(self.hash.digest.base58EncodedString()!)"
-        case .v1:
-            return ""
+        do {
+            switch self.version {
+            case .v0:
+                return "\(try self.hash.bytes.multibaseEncodedString(.base58btc, prefix: false))"
+            case .v1:
+                var data = Data()
+                data.append(contentsOf: putUVarInt(UInt64(self.version.rawValue)))
+                data.append(contentsOf: putUVarInt(self.codec.rawValue))
+                data.append(self.hash.bytes)
+                do {
+                    return try data.multibaseEncodedString(.base32)
+                }
+            }
+        } catch {
+            return "<\(error)>"
         }
     }
 
     init(_ string: String) throws {
         var data: Data
         if string.count == 46, string.hasPrefix("Qm") {
-            data = Data(string.base58EncodedStringToBytes())
+            data = try Data(fromMultibaseEncodedString: String(string[string.startIndex...]), withEncoding: .base58btc)
         } else {
             data = try Data(fromMultibaseEncodedString: string)
         }

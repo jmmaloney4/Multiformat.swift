@@ -21,6 +21,7 @@ final class CIDTests: XCTestCase {
             XCTAssertEqual(cid.version, v)
             XCTAssertEqual(cid.codec, p)
             XCTAssertEqual(cid.hash.digest, digest)
+            print(try cid.hash.digest.multibaseEncodedString(.base16upper, prefix: false))
             XCTAssertEqual(cid.description, c)
         }
     }
