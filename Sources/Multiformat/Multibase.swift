@@ -6,16 +6,6 @@
 
 import Foundation
 
-public enum MultibaseError: Error {
-    case notImplemented
-    case outOfAlphabetCharacter
-    case invalidGroupSize
-    case invalidNTet
-    case invalidN
-    case notCanonicalInput
-    case noCorrespondingAlphabetCharacter
-}
-
 public enum Multibase {
     public enum Encoding: Character, CaseIterable {
         case identity = "\0"
@@ -82,7 +72,7 @@ public enum Multibase {
             return try RFC4648.decode(input, as: .binary)
         case .identity:
             return Data(input.utf8)
-        default: throw MultibaseError.notImplemented
+        default: throw MultiformatError.notImplemented
         }
     }
 
@@ -123,7 +113,7 @@ public enum Multibase {
             rv = try RFC4648.encode(data, to: .octal, pad: false)
         case .base2:
             rv = try RFC4648.encode(data, to: .binary, pad: false)
-        default: throw MultibaseError.notImplemented
+        default: throw MultiformatError.notImplemented
         }
         if prefix {
             rv = String(encoding.rawValue) + rv

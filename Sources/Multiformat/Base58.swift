@@ -61,7 +61,7 @@ public extension String {
 
         for char in utf8.reversed() {
             guard let index = alphabet.firstIndex(of: char) else {
-                throw MultibaseError.outOfAlphabetCharacter
+                throw MultiformatError.outOfAlphabetCharacter
             }
 
             answer += (i * BigUInt(index))

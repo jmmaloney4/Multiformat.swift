@@ -4,6 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+import Crypto
 import Foundation
 import VarInt
 
@@ -46,5 +47,17 @@ public struct Multihash {
     public init(code: CodecPrefix, hash: Data) {
         self.code = code
         self.digest = hash
+    }
+
+    public init(hashing data: Data, withHash hashfunc: CodecPrefix) throws {
+        switch hashfunc {
+        case .sha2_256:
+            self.init(code: .sha2_256, hash: Data(SHA256.hash(data: data)))
+        case .sha2_512:
+            self.init(code: .sha2_512, hash: Data(SHA512.hash(data: data)))
+        default:
+            throw MultiformatError.notImplemented
+        }
+        try self.init(Data("".utf8))
     }
 }

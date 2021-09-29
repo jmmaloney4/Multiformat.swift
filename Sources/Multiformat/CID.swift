@@ -7,17 +7,18 @@
 import Foundation
 import VarInt
 
-enum CIDError: Error {
-    case multibaseDecodeError
+public enum MultiformatError: Error {
+    case notImplemented
+    case outOfAlphabetCharacter
+    case invalidGroupSize
+    case invalidNTet
+    case invalidN
+    case notCanonicalInput
+    case noCorrespondingAlphabetCharacter
     case invalidFormat
+    case multibaseDecodeError
     case unknownMulticodec
     case unknownMultihash
-}
-
-enum MultiformatError: Error {
-    // Multibase Errors
-    case invalidFormat
-    case notInAlphabet
 }
 
 public struct CID: CustomStringConvertible {
@@ -73,14 +74,14 @@ public struct CID: CustomStringConvertible {
             var buf = [UInt8](data)
             let (cidv, c1) = uVarInt(buf)
             guard cidv == self.version.rawValue else {
-                throw CIDError.invalidFormat
+                throw MultiformatError.invalidFormat
             }
             buf = [UInt8](buf[c1...])
 
             let (codecid, c2) = uVarInt(buf)
             let codec = CodecPrefix(rawValue: codecid)
             guard codec != nil else {
-                throw CIDError.unknownMulticodec
+                throw MultiformatError.unknownMulticodec
             }
             self.codec = codec!
             buf = [UInt8](buf[c2...])

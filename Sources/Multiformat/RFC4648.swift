@@ -71,7 +71,7 @@ internal enum RFC4648 {
     internal static func encode(_ data: [UInt8], withAphabet alphabet: [Character]) throws -> [Character] {
         try data.map { byte in
             guard byte < alphabet.count else {
-                throw MultibaseError.noCorrespondingAlphabetCharacter
+                throw MultiformatError.noCorrespondingAlphabetCharacter
             }
             return alphabet[Int(byte)]
         }
@@ -79,7 +79,7 @@ internal enum RFC4648 {
 
     internal static func decodeAlphabet(_ string: String, alphabet: [Character], paddingCharacter: Character = "=", allowOutOfAlphabetCharacters: Bool = false) throws -> [UInt8] {
         if let i = string.firstIndex(of: paddingCharacter), string.suffix(from: i).contains(where: { $0 != paddingCharacter }) {
-            throw MultibaseError.notCanonicalInput
+            throw MultiformatError.notCanonicalInput
         }
         return try string
             .filter { $0 != paddingCharacter }
@@ -87,7 +87,7 @@ internal enum RFC4648 {
             .filter { i in
                 guard i != nil else {
                     if !allowOutOfAlphabetCharacters {
-                        throw MultibaseError.outOfAlphabetCharacter
+                        throw MultiformatError.outOfAlphabetCharacter
                     } else {
                         return false
                     }
@@ -118,11 +118,11 @@ internal enum RFC4648 {
      *
      */
     internal static func octetGroupToNTets(_ input: [UInt8], n: Int) throws -> [UInt8] {
-        guard n > 0, n <= 8 else { throw MultibaseError.invalidN }
+        guard n > 0, n <= 8 else { throw MultiformatError.invalidN }
         if input.isEmpty { return [] }
         let len = input.count
         let l = (lcm(8, n) / 8)
-        guard input.count <= l else { throw MultibaseError.invalidGroupSize }
+        guard input.count <= l else { throw MultiformatError.invalidGroupSize }
 
         let input = input + Array(repeating: UInt8(0), count: l - input.count)
         let n = UInt8(n)
@@ -158,10 +158,10 @@ internal enum RFC4648 {
 
     internal static func nTetGroupToOctets(_ input: [UInt8], n: Int) throws -> [UInt8] {
         // Check for basic failure modes
-        guard n > 0, n <= 8 else { throw MultibaseError.invalidN }
+        guard n > 0, n <= 8 else { throw MultiformatError.invalidN }
         if input.isEmpty { return [] }
         let m = (lcm(8, n) / n)
-        guard input.count <= m else { throw MultibaseError.invalidGroupSize }
+        guard input.count <= m else { throw MultiformatError.invalidGroupSize }
 
         // Pad out input with zeros
         let l = input.count
@@ -177,7 +177,7 @@ internal enum RFC4648 {
         var q: UInt8 = 0, r: UInt8 = 0
 
         for i in input {
-            if i >= pow2(n) { throw MultibaseError.invalidNTet }
+            if i >= pow2(n) { throw MultiformatError.invalidNTet }
 
             // Handle carry. Take the least significant part of the n-tet (r) and
             // move it to the most significant part of the next output byte.
@@ -202,7 +202,7 @@ internal enum RFC4648 {
         let outSize = Int(floor(Double(l * Int(n)) / Double(8)))
 
         guard r == 0, output[outSize...].allSatisfy({ $0 == 0 }) else {
-            throw MultibaseError.notCanonicalInput
+            throw MultiformatError.notCanonicalInput
         }
 
         return [UInt8](output[0 ..< outSize])
