@@ -72,6 +72,8 @@ public enum Multibase {
             return try RFC4648.decode(input, as: .binary)
         case .identity:
             return Data(input.utf8)
+        case .proquint:
+            return try Proquint.decode(self.stripProquintPrefix(input))
         default: throw MultiformatError.notImplemented
         }
     }
@@ -113,6 +115,11 @@ public enum Multibase {
             rv = try RFC4648.encode(data, to: .octal, pad: false)
         case .base2:
             rv = try RFC4648.encode(data, to: .binary, pad: false)
+        case .identity:
+            guard let s = String(data: data, encoding: .utf8) else {
+                throw MultiformatError.invalidFormat
+            }
+            rv = s
         default: throw MultiformatError.notImplemented
         }
         if prefix {
@@ -127,6 +134,20 @@ public enum Multibase {
         }
 
         return Encoding.allCases.filter { $0.rawValue == string.first! }.first
+    }
+
+    private static func stripProquintPrefix(_ string: String) -> String {
+        var rv = string
+        if string.hasPrefix("pro-") {
+            rv.removeFirst(4)
+        } else if string.hasPrefix("ro-") {
+            rv.removeFirst(3)
+        }
+        return rv
+    }
+
+    private static func addProquintPrefix(_ string: String) -> String {
+        "pro-" + string
     }
 }
 

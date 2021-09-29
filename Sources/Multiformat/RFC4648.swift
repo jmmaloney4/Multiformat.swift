@@ -7,7 +7,7 @@
 import Foundation
 
 internal enum RFC4648 {
-    enum Alphabet: String {
+    internal enum Alphabet: String {
         case binary = "01"
         case octal = "01234567"
         case base16 = "0123456789abcdef"
@@ -28,7 +28,7 @@ internal enum RFC4648 {
         }
     }
 
-    public static func encode(_ data: Data, to alphabet: Alphabet, pad: Bool = true) throws -> String {
+    internal static func encode(_ data: Data, to alphabet: Alphabet, pad: Bool = true) throws -> String {
         let n = alphabet.bitsPerCharacter()
         let l = lcm(8, n)
         // Input Group Size
@@ -46,7 +46,7 @@ internal enum RFC4648 {
         return String(rv)
     }
 
-    public static func decode(_ string: String, as alphabet: Alphabet) throws -> Data {
+    internal static func decode(_ string: String, as alphabet: Alphabet) throws -> Data {
         let n = alphabet.bitsPerCharacter()
         let l = lcm(8, n)
         // Input Group Size
