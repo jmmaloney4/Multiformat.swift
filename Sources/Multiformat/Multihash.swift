@@ -8,11 +8,6 @@ import Crypto
 import Foundation
 import VarInt
 
-public enum MultihashError: Error {
-    case invalidFormat
-    case invalidDigestLength
-}
-
 public struct Multihash: Equatable, Hashable, Codable {
     public let code: CodecPrefix
     public let digest: Data
@@ -27,11 +22,11 @@ public struct Multihash: Equatable, Hashable, Codable {
 
     public init(_ data: Data) throws {
         var buffer = [UInt8](data)
-        guard buffer.count > 2 else { throw MultihashError.invalidFormat }
+        guard buffer.count > 2 else { throw MultiformatError.invalidFormat }
 
         let (c, i) = uVarInt(buffer)
         guard let code = CodecPrefix(rawValue: c) else {
-            throw MultihashError.invalidFormat
+            throw MultiformatError.invalidFormat
         }
         buffer = [UInt8](buffer[i...])
 
@@ -39,7 +34,7 @@ public struct Multihash: Equatable, Hashable, Codable {
         buffer = [UInt8](buffer[j...])
         let hash = Data(buffer)
         guard hash.count == l else {
-            throw MultihashError.invalidDigestLength
+            throw MultiformatError.invalidDigestLength
         }
         self.init(code: code, hash: hash)
     }

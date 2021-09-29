@@ -19,6 +19,7 @@ public enum MultiformatError: Error {
     case multibaseDecodeError
     case unknownMulticodec
     case unknownMultihash
+    case invalidDigestLength
 }
 
 public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
