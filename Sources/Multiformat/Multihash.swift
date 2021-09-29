@@ -13,7 +13,7 @@ public enum MultihashError: Error {
     case invalidDigestLength
 }
 
-public struct Multihash {
+public struct Multihash: Equatable, Hashable, Codable {
     public let code: CodecPrefix
     public let digest: Data
 

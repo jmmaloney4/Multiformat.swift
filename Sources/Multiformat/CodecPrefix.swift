@@ -9,7 +9,7 @@
 
 import Foundation
 
-public enum CodecPrefix: UInt64 {
+public enum CodecPrefix: UInt64, Codable {
     // serialization
     case protobuf = 0x50
     case cbor = 0x51

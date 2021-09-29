@@ -21,8 +21,8 @@ public enum MultiformatError: Error {
     case unknownMultihash
 }
 
-public struct CID: CustomStringConvertible {
-    public enum Version: Int {
+public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
+    public enum Version: Int, Codable {
         case v0 = 0
         case v1 = 1
     }
@@ -97,5 +97,9 @@ public struct CID: CustomStringConvertible {
         case .v1:
             return self
         }
+    }
+
+    public static func == (lhs: CID, rhs: CID) -> Bool {
+        lhs.version == rhs.version && lhs.codec == rhs.codec && lhs.hash == rhs.hash
     }
 }
