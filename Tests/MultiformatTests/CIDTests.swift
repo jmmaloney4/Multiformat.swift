@@ -14,14 +14,13 @@ final class CIDTests: XCTestCase {
         ("bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a", .v1, .raw, "CB0BB4BEADFAED664A12F0DCAA6E9DC01FFCC21F3C9AE21B1C925D574B887ED8"),
     ]
 
-    func testExample() throws {
+    func testCIDs() throws {
         for (c, v, p, h) in self.cids {
             let cid = try CID(c)
             let digest = try Data(fromMultibaseEncodedString: h.uppercased(), withEncoding: .base16upper)
             XCTAssertEqual(cid.version, v)
             XCTAssertEqual(cid.codec, p)
             XCTAssertEqual(cid.hash.digest, digest)
-            print(try cid.hash.digest.multibaseEncodedString(.base16upper, prefix: false))
             XCTAssertEqual(cid.description, c)
         }
     }

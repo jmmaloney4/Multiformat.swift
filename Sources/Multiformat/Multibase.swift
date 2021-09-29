@@ -6,6 +6,20 @@
 
 import Foundation
 
+public extension Data {
+    init(fromMultibaseEncodedString string: String) throws {
+        self.init(try Multibase.decode(string))
+    }
+
+    init(fromMultibaseEncodedString string: String, withEncoding encoding: Multibase.Encoding) throws {
+        self.init(try Multibase.decode(string, withEncoding: encoding))
+    }
+
+    func multibaseEncodedString(_ encoding: Multibase.Encoding, prefix: Bool = true) throws -> String {
+        try Multibase.encode(self, withEncoding: encoding, prefix: prefix)
+    }
+}
+
 public enum Multibase {
     public enum Encoding: Character, CaseIterable {
         case identity = "\0"
@@ -34,7 +48,7 @@ public enum Multibase {
         case proquint = "p"
     }
 
-    public static func decode(_ string: String) throws -> Data {
+    internal static func decode(_ string: String) throws -> Data {
         let encoding = Multibase.identifyEncoding(string: String(string.prefix(1)))
         guard encoding != nil else {
             throw MultiformatError.invalidFormat
@@ -46,7 +60,7 @@ public enum Multibase {
         return try Multibase.decode(input, withEncoding: encoding!)
     }
 
-    public static func decode(_ input: String, withEncoding encoding: Encoding) throws -> Data {
+    internal static func decode(_ input: String, withEncoding encoding: Encoding) throws -> Data {
         switch encoding {
         case .base64, .base64pad:
             return try RFC4648.decode(input, as: .base64)
@@ -78,7 +92,7 @@ public enum Multibase {
         }
     }
 
-    public static func encode(_ data: Data, withEncoding encoding: Encoding, prefix: Bool = true) throws -> String {
+    internal static func encode(_ data: Data, withEncoding encoding: Encoding, prefix: Bool = true) throws -> String {
         var rv: String
         switch encoding {
         case .base64:
@@ -128,7 +142,7 @@ public enum Multibase {
         return rv
     }
 
-    static func identifyEncoding(string: String) -> Encoding? {
+    public static func identifyEncoding(string: String) -> Encoding? {
         guard !string.isEmpty else {
             return nil
         }
@@ -148,19 +162,5 @@ public enum Multibase {
 
     private static func addProquintPrefix(_ string: String) -> String {
         "pro-" + string
-    }
-}
-
-public extension Data {
-    init(fromMultibaseEncodedString string: String) throws {
-        self.init(try Multibase.decode(string))
-    }
-
-    init(fromMultibaseEncodedString string: String, withEncoding encoding: Multibase.Encoding) throws {
-        self.init(try Multibase.decode(string, withEncoding: encoding))
-    }
-
-    func multibaseEncodedString(_ encoding: Multibase.Encoding, prefix: Bool = true) throws -> String {
-        try Multibase.encode(self, withEncoding: encoding, prefix: prefix)
     }
 }
