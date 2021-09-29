@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 # This is relative to where this script resides
 # Though you can also define an absolute path
-DEFAULT_OUTPUT_DIR = './Sources/CID/'
+DEFAULT_OUTPUT_DIR = './Sources/Multiformat/'
 
 # The header of the generated files
 HEADER = '''\
@@ -84,13 +84,13 @@ for row in multicodec_reader:
 tools_dir = os.path.dirname(os.path.abspath(__file__))
 output_dir = os.path.join(tools_dir, DEFAULT_OUTPUT_DIR)
 
-print_file = os.path.join(output_dir, 'CodecPrefixes.swift')
+print_file = os.path.join(output_dir, 'CodecPrefix.swift')
 with open(print_file, 'w') as ff:
     ff.write(HEADER)
     ff.write('''
 import Foundation
 
-public enum CodecPrefixes: UInt64 {
+public enum CodecPrefix: UInt64 {
     ''')
     for tagindex, (tag, codecs) in enumerate(parsed.items()):
         ff.write(f"\n    // {tag}\n")

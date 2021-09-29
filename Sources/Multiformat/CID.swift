@@ -41,9 +41,7 @@ public struct CID: CustomStringConvertible {
                 data.append(contentsOf: putUVarInt(UInt64(self.version.rawValue)))
                 data.append(contentsOf: putUVarInt(self.codec.rawValue))
                 data.append(self.hash.bytes)
-                do {
-                    return try data.multibaseEncodedString(.base32)
-                }
+                return try data.multibaseEncodedString(.base32)
             }
         } catch {
             return "<\(error)>"
@@ -87,6 +85,17 @@ public struct CID: CustomStringConvertible {
             buf = [UInt8](buf[c2...])
 
             self.hash = try Multihash(Data(buf))
+        }
+    }
+
+    public func CIDv1() -> CID {
+        switch self.version {
+        case .v0:
+            var rv = self
+            rv.version = .v0
+            return rv
+        case .v1:
+            return self
         }
     }
 }

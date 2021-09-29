@@ -19,7 +19,6 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/jmmaloney4/VarInt.git", .branch("master")),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
-//        .package(name: "Multihash", url: "https://github.com/jmmaloney4/Multihash.swift.git", .branch("master")),
         .package(url: "https://github.com/apple/swift-crypto.git", from: "2.0.0"),
     ],
     targets: [
