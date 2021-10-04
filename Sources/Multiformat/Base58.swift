@@ -29,13 +29,13 @@ import Foundation
 private let alphabet = [UInt8]("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".utf8)
 private let radix = BigUInt(alphabet.count)
 
-public extension Array where Element == UInt8 {
+internal extension Array where Element == UInt8 {
     func base58EncodedString() -> String {
         Data(self).base58EncodedString()
     }
 }
 
-public extension Data {
+internal extension Data {
     func base58EncodedString() -> String {
         var bytes = [UInt8]()
         var integer = BigUInt(self)
@@ -52,7 +52,7 @@ public extension Data {
     }
 }
 
-public extension String {
+internal extension String {
     // @todo should this be done with the decode/encode generic function?
     // @todo better naming?
     func base58EncodedData() throws -> Data {
