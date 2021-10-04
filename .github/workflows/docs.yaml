@@ -1,0 +1,22 @@
+name: PublishDocumentation
+on:
+  workflow_dispatch:
+  release:
+    types: [ published ]
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+    – uses: actions/checkout@v2.0.0
+    
+    – name: Generate Jazzy Docs
+      uses: sersoft-gmbh/swifty-docs-action@v1.0.0
+      with:
+        output: docs
+        clean: true
+        
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3.0.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
