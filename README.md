@@ -1,4 +1,4 @@
-# CID.swift
+# Multiformat.swift
 
 ```swift
 let cid = CID("bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a")
