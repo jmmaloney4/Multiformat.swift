@@ -49,6 +49,12 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
         }
     }
 
+    init(version: Version, codec: CodecPrefix, hash: Multihash) {
+        self.version = version
+        self.codec = codec
+        self.hash = hash
+    }
+
     init(_ string: String) throws {
         var data: Data
         if string.count == 46, string.hasPrefix("Qm") {
@@ -93,7 +99,7 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
         switch self.version {
         case .v0:
             var rv = self
-            rv.version = .v0
+            rv.version = .v1
             return rv
         case .v1:
             return self
