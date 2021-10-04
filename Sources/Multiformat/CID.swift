@@ -20,6 +20,7 @@ public enum MultiformatError: Error {
     case unknownMulticodec
     case unknownMultihash
     case invalidDigestLength
+    case invalidEncodingForCIDv0
 }
 
 public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
@@ -36,13 +37,9 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
         do {
             switch self.version {
             case .v0:
-                return "\(try self.hash.bytes.multibaseEncodedString(.base58btc, prefix: false))"
+                return try self.encoded(base: .base58btc)
             case .v1:
-                var data = Data()
-                data.append(contentsOf: putUVarInt(UInt64(self.version.rawValue)))
-                data.append(contentsOf: putUVarInt(self.codec.rawValue))
-                data.append(self.hash.bytes)
-                return try data.multibaseEncodedString(.base32)
+                return try self.encoded(base: .base32)
             }
         } catch {
             return "<\(error)>"
@@ -103,6 +100,22 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
             return rv
         case .v1:
             return self
+        }
+    }
+
+    public func encoded(base: Multibase.Encoding = .base58btc) throws -> String {
+        switch self.version {
+        case .v0:
+            guard base == .base58btc else {
+                throw MultiformatError.invalidEncodingForCIDv0
+            }
+            return "\(try self.hash.bytes.multibaseEncodedString(base, prefix: false))"
+        case .v1:
+            var data = Data()
+            data.append(contentsOf: putUVarInt(UInt64(self.version.rawValue)))
+            data.append(contentsOf: putUVarInt(self.codec.rawValue))
+            data.append(self.hash.bytes)
+            return try data.multibaseEncodedString(base)
         }
     }
 

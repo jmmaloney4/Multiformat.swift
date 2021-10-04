@@ -14,6 +14,7 @@ final class MultibaseTests: XCTestCase {
         XCTAssertEqual(Multibase.identifyEncoding(string: "zfffs"), Multibase.Encoding.base58btc)
         XCTAssertEqual(Multibase.identifyEncoding(string: "asdfasdf"), nil)
         XCTAssertEqual(Multibase.identifyEncoding(string: "MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="), .base64pad)
+        XCTAssertEqual(Multibase.identifyEncoding(string: "zb2rhe5P4gXftAwvA4eXQ5HJwsER2owDyS9sKaQRRVQPn93bA"), .base58btc)
     }
 
     func testDecode() throws {
