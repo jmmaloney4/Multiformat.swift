@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (0% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" alt=""/>
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CodecPrefix.html">CodecPrefix</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Multibase.html">Multibase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Multibase/Encoding.html">– Encoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/MultiformatError.html">MultiformatError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/SHA256.html">SHA256</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/SHA256/Digest.html">– Digest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/SHA512.html">SHA512</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/SHA512/Digest.html">– Digest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/CID.html">CID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/CID/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Multihash.html">Multihash</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='cid-swift' class='heading'>CID.swift</h1>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cid</span> <span class="o">=</span> <span class="kt">CID</span><span class="p">(</span><span class="s">"bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">version</span><span class="p">)</span> <span class="c1">// .v1</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">codec</span><span class="p">)</span> <span class="c1">// .raw</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">hash</span><span class="o">.</span><span class="n">code</span><span class="p">)</span> <span class="c1">// .sha2_256</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">)</span>  <span class="c1">// Data([203, 11, 180, 190, 173, 250, 237, 102, 74, 18, 240, 220, 170, 110, 157, 192, 31, 252, 194, 31, 60, 154, 226, 27, 28, 146, 93, 87, 75, 136, 126, 216])</span>
+                        <span class="c1">// Or CB0BB4BEADFAED664A12F0DCAA6E9DC01FFCC21F3C9AE21B1C925D574B887ED8</span>
+</code></pre>
+<h2 id='multibase' class='heading'>Multibase</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">fromMultibaseEncodedString</span><span class="p">:</span> <span class="s">"MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="</span><span class="p">)</span>
+<span class="c1">// Data([0x4D, 0x75, 0x6C, 0x74, 0x69, 0x62, 0x61, 0x73, 0x65, 0x20, 0x69, 0x73, 0x20, 0x61, 0x77, 0x65, 0x73, 0x6F, 0x6D, 0x65, 0x21, 0x20, 0x5C, 0x6F, 0x2F])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="nf">multibaseEncodedString</span><span class="p">(</span><span class="o">.</span><span class="n">base64pad</span><span class="p">,</span> <span class="nv">prefix</span><span class="p">:</span> <span class="kc">false</span><span class="p">))</span> <span class="c1">// "TXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="</span>
+</code></pre>
+<h2 id='update-multicodec-table' class='heading'>Update Multicodec Table</h2>
+<pre class="highlight plaintext"><code>curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv | ./update_table.py
+</code></pre>
+<h2 id='documentation' class='heading'>Documentation</h2>
+<h3 id='rfc-4648' class='heading'>RFC 4648</h3>
+
+<p><a href="https://ipfs.io/ipfs/bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a">/ipfs/bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a</a></p>
+<h3 id='proquints' class='heading'>Proquints</h3>
+
+<p><a href="https://ipfs.io/ipfs/bafybeib5jsyi5igjwhi7hzkfebpvnq2ykbwpxeaaxlkyfyxqvcecoao4qa">/ipfs/bafybeib5jsyi5igjwhi7hzkfebpvnq2ykbwpxeaaxlkyfyxqvcecoao4qa</a></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-10-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
