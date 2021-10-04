@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/jmmaloney4/VarInt.git", .branch("master")),
+        .package(url: "https://github.com/jmmaloney4/VarInt.git", from: "1.0.0"),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
         .package(url: "https://github.com/apple/swift-crypto.git", from: "2.0.0"),
     ],
