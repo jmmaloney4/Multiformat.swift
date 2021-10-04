@@ -23,6 +23,7 @@ public enum MultiformatError: Error {
     case invalidEncodingForCIDv0
 }
 
+/// A Type representing a CID (Content Identifier) as defined in [multiformats/cid](https://github.com/multiformats/cid).
 public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
     public enum Version: Int, Codable {
         case v0 = 0
