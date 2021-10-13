@@ -17,7 +17,7 @@
     <a title="CID Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (0% documented)</p>
+        <p><a href="../index.html"> Docs</a> (1% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -118,7 +118,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>An enum representing the CID version.</p>
+
+<p>The rawValue Int is the appropriate multicodec value for the CID version.</p>
 
                         <a href="../Structs/CID/Version.html" class="slightly-smaller">See more</a>
                       </div>
@@ -136,9 +138,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:s23CustomStringConvertibleP11descriptionSSvp"></a>
+                    <a name="/s:11Multiformat3CIDV11descriptionSSvp"></a>
                     <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
-                    <a class="token" href="#/s:s23CustomStringConvertibleP11descriptionSSvp">description</a>
+                    <a class="token" href="#/s:11Multiformat3CIDV11descriptionSSvp">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -146,7 +148,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Returns a textual representation of this CID.</p>
+
+<p>For CIDv0 this returns <code>Qm&lt;hash as base58btc&gt;</code>.
+For CIDv1 this returns the <code>&lt;varint CID version&gt;&lt;varint multicodec&gt;&lt;multihash bytes&gt;</code> encoded as a <code>.base32</code>
+multibase string (looks like &ldquo;bafy&hellip;&rdquo;).</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -172,7 +179,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Return a CIDv1 version of this CID. If it is already a CIDv1 this just returns <code>self</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -189,9 +196,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11Multiformat3CIDV7encoded4baseSSAA9MultibaseO8EncodingO_tKF"></a>
-                    <a name="//apple_ref/swift/Method/encoded(base:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11Multiformat3CIDV7encoded4baseSSAA9MultibaseO8EncodingO_tKF">encoded(base:<wbr>)</a>
+                    <a name="/s:11Multiformat3CIDV7encoded4base15multibasePrefixSSAA9MultibaseO8EncodingO_SbtKF"></a>
+                    <a name="//apple_ref/swift/Method/encoded(base:multibasePrefix:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11Multiformat3CIDV7encoded4base15multibasePrefixSSAA9MultibaseO8EncodingO_SbtKF">encoded(base:<wbr>multibasePrefix:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -199,14 +206,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Encoded this CID to the specified multibase encoding.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encoded</span><span class="p">(</span><span class="nv">base</span><span class="p">:</span> <span class="kt"><a href="../Enums/Multibase.html">Multibase</a></span><span class="o">.</span><span class="kt">Encoding</span> <span class="o">=</span> <span class="o">.</span><span class="n">base58btc</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encoded</span><span class="p">(</span><span class="nv">base</span><span class="p">:</span> <span class="kt"><a href="../Enums/Multibase.html">Multibase</a></span><span class="o">.</span><span class="kt">Encoding</span> <span class="o">=</span> <span class="o">.</span><span class="n">base58btc</span><span class="p">,</span> <span class="nv">multibasePrefix</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>

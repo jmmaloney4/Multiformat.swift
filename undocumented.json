@@ -99,41 +99,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
-      "line": 28,
-      "symbol": "CID.Version",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
-      "line": 29,
-      "symbol": "CID.Version.v0",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
-      "line": 30,
-      "symbol": "CID.Version.v1",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
-      "line": 96,
-      "symbol": "CID.CIDv1()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
-      "line": 107,
-      "symbol": "CID.encoded(base:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 12,
       "symbol": "CodecPrefix",
