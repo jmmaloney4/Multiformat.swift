@@ -99,6 +99,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CID.swift",
+      "line": 130,
+      "symbol": "CID.bytes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 12,
       "symbol": "CodecPrefix",
@@ -3453,35 +3460,35 @@
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Crypto+CID.swift",
-      "line": 12,
+      "line": 11,
       "symbol": "Multihash.init(digest:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Crypto+CID.swift",
-      "line": 17,
+      "line": 16,
       "symbol": "Multihash.init(digest:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Crypto+CID.swift",
-      "line": 22,
+      "line": 21,
       "symbol": "Multihash.init(digest:type:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Crypto+CID.swift",
-      "line": 29,
+      "line": 28,
       "symbol": "SHA256.Digest.CIDv1(codec:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Crypto+CID.swift",
-      "line": 35,
+      "line": 34,
       "symbol": "SHA512.Digest.CIDv1(codec:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -3698,7 +3705,7 @@
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multihash.swift",
-      "line": 11,
+      "line": 10,
       "symbol": "Multihash",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
