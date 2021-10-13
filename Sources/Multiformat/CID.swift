@@ -127,21 +127,28 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
         }
     }
 
-    /// Encoded this CID to the specified multibase encoding.
-    public func encoded(base: Multibase.Encoding = .base58btc, multibasePrefix: Bool = true) throws -> String {
+    public var bytes: Data {
         switch self.version {
         case .v0:
-            guard base == .base58btc else {
-                throw MultiformatError.invalidEncodingForCIDv0
-            }
-            return "\(try self.hash.bytes.multibaseEncodedString(base, prefix: false))"
+            return self.hash.bytes
         case .v1:
             var data = Data()
             data.append(contentsOf: putUVarInt(UInt64(self.version.rawValue)))
             data.append(contentsOf: putUVarInt(self.codec.rawValue))
             data.append(self.hash.bytes)
-            return try data.multibaseEncodedString(base, prefix: multibasePrefix)
+            return data
         }
+    }
+
+    /// Encoded this CID to the specified multibase encoding.
+    ///
+    /// - Parameters:
+    ///   - base: the `Multibase.Encoding` to encode the CID to
+    public func encoded(base: Multibase.Encoding = .base58btc, multibasePrefix: Bool = true) throws -> String {
+        guard self.version != .v0 || base == .base58btc else {
+            throw MultiformatError.invalidEncodingForCIDv0
+        }
+        return try self.bytes.multibaseEncodedString(base, prefix: multibasePrefix && self.version != .v0)
     }
 
     public static func == (lhs: CID, rhs: CID) -> Bool {
