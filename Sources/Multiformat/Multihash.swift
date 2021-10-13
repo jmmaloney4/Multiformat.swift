@@ -8,10 +8,12 @@ import Crypto
 import Foundation
 import VarInt
 
+/// A struct representing a Multihash as defined in [multiformats/multihash](https://github.com/multiformats/multihash).
 public struct Multihash: Equatable, Hashable, Codable {
     public let code: CodecPrefix
     public let digest: Data
 
+    /// Return the multihash encoded to data.
     public var bytes: Data {
         var data = Data(repeating: 0, count: 0)
         data.append(contentsOf: putUVarInt(self.code.rawValue))
@@ -20,6 +22,7 @@ public struct Multihash: Equatable, Hashable, Codable {
         return data
     }
 
+    /// Parse the given data as a multihash.
     public init(_ data: Data) throws {
         var buffer = [UInt8](data)
         guard buffer.count > 2 else { throw MultiformatError.invalidFormat }
@@ -39,11 +42,13 @@ public struct Multihash: Equatable, Hashable, Codable {
         self.init(code: code, hash: hash)
     }
 
+    /// Directly construct a Multihash with the given multicodec hash function code and digest.
     public init(code: CodecPrefix, hash: Data) {
         self.code = code
         self.digest = hash
     }
 
+    /// Hash the given data with the specified hash function. Currently only `.sha2_256` and `.sha2_512` are supported.
     public init(hashing data: Data, withHash hashfunc: CodecPrefix) throws {
         switch hashfunc {
         case .sha2_256:
@@ -53,6 +58,5 @@ public struct Multihash: Equatable, Hashable, Codable {
         default:
             throw MultiformatError.notImplemented
         }
-        try self.init(Data("".utf8))
     }
 }
