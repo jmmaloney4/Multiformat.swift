@@ -5,6 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import Crypto
+import CryptoKit
 import Foundation
 
 public extension Multihash {
@@ -15,6 +16,11 @@ public extension Multihash {
 
     init(digest: SHA512.Digest) {
         self.code = .sha2_512
+        self.digest = Data(digest)
+    }
+
+    init<T: Digest>(digest: T, type: CodecPrefix) {
+        self.code = type
         self.digest = Data(digest)
     }
 }

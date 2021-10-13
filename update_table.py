@@ -90,7 +90,7 @@ with open(print_file, 'w') as ff:
     ff.write('''
 import Foundation
 
-public enum CodecPrefix: UInt64 {
+public enum CodecPrefix: UInt64, Codable {
     ''')
     for tagindex, (tag, codecs) in enumerate(parsed.items()):
         ff.write(f"\n    // {tag}\n")
