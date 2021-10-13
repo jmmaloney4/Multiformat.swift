@@ -45,7 +45,7 @@ public struct CID: CustomStringConvertible, Equatable, Hashable, Codable {
     var codec: CodecPrefix
     /// The multihash containing the digest of the content identified by this CID.
     ///
-    /// For CIDv0 this must be a `.sha_2_256` Multihash.
+    /// For CIDv0 this must be a `.sha2_256` Multihash.
     var hash: Multihash
 
     /// Returns a textual representation of this CID.
