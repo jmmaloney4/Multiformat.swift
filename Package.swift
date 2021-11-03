@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Multiformat",
+    // Necessary for swift crypto
     platforms: [
         .macOS(.v10_15),
     ],

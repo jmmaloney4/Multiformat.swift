@@ -7,14 +7,17 @@
 import Foundation
 
 public extension Data {
+    /// Decodes the given string based on its multibase prefix.
     init(fromMultibaseEncodedString string: String) throws {
         self.init(try Multibase.decode(string))
     }
 
+    /// Decodes the given string as the given encoding. String should not have a multibase prefix character.
     init(fromMultibaseEncodedString string: String, withEncoding encoding: Multibase.Encoding) throws {
         self.init(try Multibase.decode(string, withEncoding: encoding))
     }
 
+    /// Encode the data as a multibase string with the given encoding. If prefix is false, do not prefix it with a multibase code character.
     func multibaseEncodedString(_ encoding: Multibase.Encoding, prefix: Bool = true) throws -> String {
         try Multibase.encode(self, withEncoding: encoding, prefix: prefix)
     }
@@ -46,6 +49,15 @@ public enum Multibase {
         case base64url = "u"
         case base64urlpad = "U"
         case proquint = "p"
+    }
+
+    /// Identify the encoding of the given string based on the multibase prefix character.
+    public static func identifyEncoding(string: String) -> Encoding? {
+        guard !string.isEmpty else {
+            return nil
+        }
+
+        return Encoding.allCases.filter { $0.rawValue == string.first! }.first
     }
 
     internal static func decode(_ string: String) throws -> Data {
@@ -140,14 +152,6 @@ public enum Multibase {
             rv = String(encoding.rawValue) + rv
         }
         return rv
-    }
-
-    public static func identifyEncoding(string: String) -> Encoding? {
-        guard !string.isEmpty else {
-            return nil
-        }
-
-        return Encoding.allCases.filter { $0.rawValue == string.first! }.first
     }
 
     private static func stripProquintPrefix(_ string: String) -> String {

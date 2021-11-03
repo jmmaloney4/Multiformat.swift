@@ -5,7 +5,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 #error("""
-  -----------------------------------------------------
-  Please test with `swift test --enable-test-discovery`
-  -----------------------------------------------------
-  """)
+-----------------------------------------------------
+Please test with `swift test --enable-test-discovery`
+-----------------------------------------------------
+""")
