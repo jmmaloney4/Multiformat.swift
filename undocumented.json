@@ -311,3361 +311,3368 @@
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 46,
-      "symbol": "CodecPrefix.murmur3_128",
+      "symbol": "CodecPrefix.sha2_384",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 47,
+      "symbol": "CodecPrefix.murmur3_x64_64",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 48,
       "symbol": "CodecPrefix.murmur3_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 48,
+      "line": 49,
       "symbol": "CodecPrefix.dbl_sha2_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 49,
+      "line": 50,
       "symbol": "CodecPrefix.md4",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 50,
+      "line": 51,
       "symbol": "CodecPrefix.md5",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 51,
+      "line": 52,
       "symbol": "CodecPrefix.bmt",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 52,
+      "line": 53,
       "symbol": "CodecPrefix.sha2_256_trunc254_padded",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 53,
-      "symbol": "CodecPrefix.ripemd_128",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 54,
-      "symbol": "CodecPrefix.ripemd_160",
+      "symbol": "CodecPrefix.sha2_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 55,
-      "symbol": "CodecPrefix.ripemd_256",
+      "symbol": "CodecPrefix.sha2_512_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 56,
-      "symbol": "CodecPrefix.ripemd_320",
+      "symbol": "CodecPrefix.sha2_512_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 57,
-      "symbol": "CodecPrefix.x11",
+      "symbol": "CodecPrefix.murmur3_x64_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 58,
-      "symbol": "CodecPrefix.kangarootwelve",
+      "symbol": "CodecPrefix.ripemd_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 59,
-      "symbol": "CodecPrefix.sm3_256",
+      "symbol": "CodecPrefix.ripemd_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 60,
-      "symbol": "CodecPrefix.blake2b_8",
+      "symbol": "CodecPrefix.ripemd_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 61,
-      "symbol": "CodecPrefix.blake2b_16",
+      "symbol": "CodecPrefix.ripemd_320",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 62,
-      "symbol": "CodecPrefix.blake2b_24",
+      "symbol": "CodecPrefix.x11",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 63,
-      "symbol": "CodecPrefix.blake2b_32",
+      "symbol": "CodecPrefix.kangarootwelve",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 64,
-      "symbol": "CodecPrefix.blake2b_40",
+      "symbol": "CodecPrefix.sm3_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 65,
-      "symbol": "CodecPrefix.blake2b_48",
+      "symbol": "CodecPrefix.blake2b_8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 66,
-      "symbol": "CodecPrefix.blake2b_56",
+      "symbol": "CodecPrefix.blake2b_16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 67,
-      "symbol": "CodecPrefix.blake2b_64",
+      "symbol": "CodecPrefix.blake2b_24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 68,
-      "symbol": "CodecPrefix.blake2b_72",
+      "symbol": "CodecPrefix.blake2b_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 69,
-      "symbol": "CodecPrefix.blake2b_80",
+      "symbol": "CodecPrefix.blake2b_40",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 70,
-      "symbol": "CodecPrefix.blake2b_88",
+      "symbol": "CodecPrefix.blake2b_48",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 71,
-      "symbol": "CodecPrefix.blake2b_96",
+      "symbol": "CodecPrefix.blake2b_56",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 72,
-      "symbol": "CodecPrefix.blake2b_104",
+      "symbol": "CodecPrefix.blake2b_64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 73,
-      "symbol": "CodecPrefix.blake2b_112",
+      "symbol": "CodecPrefix.blake2b_72",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 74,
-      "symbol": "CodecPrefix.blake2b_120",
+      "symbol": "CodecPrefix.blake2b_80",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 75,
-      "symbol": "CodecPrefix.blake2b_128",
+      "symbol": "CodecPrefix.blake2b_88",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 76,
-      "symbol": "CodecPrefix.blake2b_136",
+      "symbol": "CodecPrefix.blake2b_96",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 77,
-      "symbol": "CodecPrefix.blake2b_144",
+      "symbol": "CodecPrefix.blake2b_104",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 78,
-      "symbol": "CodecPrefix.blake2b_152",
+      "symbol": "CodecPrefix.blake2b_112",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 79,
-      "symbol": "CodecPrefix.blake2b_160",
+      "symbol": "CodecPrefix.blake2b_120",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 80,
-      "symbol": "CodecPrefix.blake2b_168",
+      "symbol": "CodecPrefix.blake2b_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 81,
-      "symbol": "CodecPrefix.blake2b_176",
+      "symbol": "CodecPrefix.blake2b_136",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 82,
-      "symbol": "CodecPrefix.blake2b_184",
+      "symbol": "CodecPrefix.blake2b_144",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 83,
-      "symbol": "CodecPrefix.blake2b_192",
+      "symbol": "CodecPrefix.blake2b_152",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 84,
-      "symbol": "CodecPrefix.blake2b_200",
+      "symbol": "CodecPrefix.blake2b_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 85,
-      "symbol": "CodecPrefix.blake2b_208",
+      "symbol": "CodecPrefix.blake2b_168",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 86,
-      "symbol": "CodecPrefix.blake2b_216",
+      "symbol": "CodecPrefix.blake2b_176",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 87,
-      "symbol": "CodecPrefix.blake2b_224",
+      "symbol": "CodecPrefix.blake2b_184",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 88,
-      "symbol": "CodecPrefix.blake2b_232",
+      "symbol": "CodecPrefix.blake2b_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 89,
-      "symbol": "CodecPrefix.blake2b_240",
+      "symbol": "CodecPrefix.blake2b_200",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 90,
-      "symbol": "CodecPrefix.blake2b_248",
+      "symbol": "CodecPrefix.blake2b_208",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 91,
-      "symbol": "CodecPrefix.blake2b_256",
+      "symbol": "CodecPrefix.blake2b_216",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 92,
-      "symbol": "CodecPrefix.blake2b_264",
+      "symbol": "CodecPrefix.blake2b_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 93,
-      "symbol": "CodecPrefix.blake2b_272",
+      "symbol": "CodecPrefix.blake2b_232",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 94,
-      "symbol": "CodecPrefix.blake2b_280",
+      "symbol": "CodecPrefix.blake2b_240",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 95,
-      "symbol": "CodecPrefix.blake2b_288",
+      "symbol": "CodecPrefix.blake2b_248",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 96,
-      "symbol": "CodecPrefix.blake2b_296",
+      "symbol": "CodecPrefix.blake2b_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 97,
-      "symbol": "CodecPrefix.blake2b_304",
+      "symbol": "CodecPrefix.blake2b_264",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 98,
-      "symbol": "CodecPrefix.blake2b_312",
+      "symbol": "CodecPrefix.blake2b_272",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 99,
-      "symbol": "CodecPrefix.blake2b_320",
+      "symbol": "CodecPrefix.blake2b_280",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 100,
-      "symbol": "CodecPrefix.blake2b_328",
+      "symbol": "CodecPrefix.blake2b_288",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 101,
-      "symbol": "CodecPrefix.blake2b_336",
+      "symbol": "CodecPrefix.blake2b_296",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 102,
-      "symbol": "CodecPrefix.blake2b_344",
+      "symbol": "CodecPrefix.blake2b_304",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 103,
-      "symbol": "CodecPrefix.blake2b_352",
+      "symbol": "CodecPrefix.blake2b_312",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 104,
-      "symbol": "CodecPrefix.blake2b_360",
+      "symbol": "CodecPrefix.blake2b_320",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 105,
-      "symbol": "CodecPrefix.blake2b_368",
+      "symbol": "CodecPrefix.blake2b_328",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 106,
-      "symbol": "CodecPrefix.blake2b_376",
+      "symbol": "CodecPrefix.blake2b_336",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 107,
-      "symbol": "CodecPrefix.blake2b_384",
+      "symbol": "CodecPrefix.blake2b_344",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 108,
-      "symbol": "CodecPrefix.blake2b_392",
+      "symbol": "CodecPrefix.blake2b_352",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 109,
-      "symbol": "CodecPrefix.blake2b_400",
+      "symbol": "CodecPrefix.blake2b_360",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 110,
-      "symbol": "CodecPrefix.blake2b_408",
+      "symbol": "CodecPrefix.blake2b_368",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 111,
-      "symbol": "CodecPrefix.blake2b_416",
+      "symbol": "CodecPrefix.blake2b_376",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 112,
-      "symbol": "CodecPrefix.blake2b_424",
+      "symbol": "CodecPrefix.blake2b_384",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 113,
-      "symbol": "CodecPrefix.blake2b_432",
+      "symbol": "CodecPrefix.blake2b_392",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 114,
-      "symbol": "CodecPrefix.blake2b_440",
+      "symbol": "CodecPrefix.blake2b_400",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 115,
-      "symbol": "CodecPrefix.blake2b_448",
+      "symbol": "CodecPrefix.blake2b_408",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 116,
-      "symbol": "CodecPrefix.blake2b_456",
+      "symbol": "CodecPrefix.blake2b_416",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 117,
-      "symbol": "CodecPrefix.blake2b_464",
+      "symbol": "CodecPrefix.blake2b_424",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 118,
-      "symbol": "CodecPrefix.blake2b_472",
+      "symbol": "CodecPrefix.blake2b_432",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 119,
-      "symbol": "CodecPrefix.blake2b_480",
+      "symbol": "CodecPrefix.blake2b_440",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 120,
-      "symbol": "CodecPrefix.blake2b_488",
+      "symbol": "CodecPrefix.blake2b_448",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 121,
-      "symbol": "CodecPrefix.blake2b_496",
+      "symbol": "CodecPrefix.blake2b_456",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 122,
-      "symbol": "CodecPrefix.blake2b_504",
+      "symbol": "CodecPrefix.blake2b_464",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 123,
-      "symbol": "CodecPrefix.blake2b_512",
+      "symbol": "CodecPrefix.blake2b_472",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 124,
-      "symbol": "CodecPrefix.blake2s_8",
+      "symbol": "CodecPrefix.blake2b_480",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 125,
-      "symbol": "CodecPrefix.blake2s_16",
+      "symbol": "CodecPrefix.blake2b_488",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 126,
-      "symbol": "CodecPrefix.blake2s_24",
+      "symbol": "CodecPrefix.blake2b_496",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 127,
-      "symbol": "CodecPrefix.blake2s_32",
+      "symbol": "CodecPrefix.blake2b_504",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 128,
-      "symbol": "CodecPrefix.blake2s_40",
+      "symbol": "CodecPrefix.blake2b_512",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 129,
-      "symbol": "CodecPrefix.blake2s_48",
+      "symbol": "CodecPrefix.blake2s_8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 130,
-      "symbol": "CodecPrefix.blake2s_56",
+      "symbol": "CodecPrefix.blake2s_16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 131,
-      "symbol": "CodecPrefix.blake2s_64",
+      "symbol": "CodecPrefix.blake2s_24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 132,
-      "symbol": "CodecPrefix.blake2s_72",
+      "symbol": "CodecPrefix.blake2s_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 133,
-      "symbol": "CodecPrefix.blake2s_80",
+      "symbol": "CodecPrefix.blake2s_40",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 134,
-      "symbol": "CodecPrefix.blake2s_88",
+      "symbol": "CodecPrefix.blake2s_48",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 135,
-      "symbol": "CodecPrefix.blake2s_96",
+      "symbol": "CodecPrefix.blake2s_56",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 136,
-      "symbol": "CodecPrefix.blake2s_104",
+      "symbol": "CodecPrefix.blake2s_64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 137,
-      "symbol": "CodecPrefix.blake2s_112",
+      "symbol": "CodecPrefix.blake2s_72",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 138,
-      "symbol": "CodecPrefix.blake2s_120",
+      "symbol": "CodecPrefix.blake2s_80",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 139,
-      "symbol": "CodecPrefix.blake2s_128",
+      "symbol": "CodecPrefix.blake2s_88",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 140,
-      "symbol": "CodecPrefix.blake2s_136",
+      "symbol": "CodecPrefix.blake2s_96",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 141,
-      "symbol": "CodecPrefix.blake2s_144",
+      "symbol": "CodecPrefix.blake2s_104",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 142,
-      "symbol": "CodecPrefix.blake2s_152",
+      "symbol": "CodecPrefix.blake2s_112",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 143,
-      "symbol": "CodecPrefix.blake2s_160",
+      "symbol": "CodecPrefix.blake2s_120",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 144,
-      "symbol": "CodecPrefix.blake2s_168",
+      "symbol": "CodecPrefix.blake2s_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 145,
-      "symbol": "CodecPrefix.blake2s_176",
+      "symbol": "CodecPrefix.blake2s_136",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 146,
-      "symbol": "CodecPrefix.blake2s_184",
+      "symbol": "CodecPrefix.blake2s_144",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 147,
-      "symbol": "CodecPrefix.blake2s_192",
+      "symbol": "CodecPrefix.blake2s_152",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 148,
-      "symbol": "CodecPrefix.blake2s_200",
+      "symbol": "CodecPrefix.blake2s_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 149,
-      "symbol": "CodecPrefix.blake2s_208",
+      "symbol": "CodecPrefix.blake2s_168",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 150,
-      "symbol": "CodecPrefix.blake2s_216",
+      "symbol": "CodecPrefix.blake2s_176",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 151,
-      "symbol": "CodecPrefix.blake2s_224",
+      "symbol": "CodecPrefix.blake2s_184",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 152,
-      "symbol": "CodecPrefix.blake2s_232",
+      "symbol": "CodecPrefix.blake2s_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 153,
-      "symbol": "CodecPrefix.blake2s_240",
+      "symbol": "CodecPrefix.blake2s_200",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 154,
-      "symbol": "CodecPrefix.blake2s_248",
+      "symbol": "CodecPrefix.blake2s_208",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 155,
-      "symbol": "CodecPrefix.blake2s_256",
+      "symbol": "CodecPrefix.blake2s_216",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 156,
-      "symbol": "CodecPrefix.skein256_8",
+      "symbol": "CodecPrefix.blake2s_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 157,
-      "symbol": "CodecPrefix.skein256_16",
+      "symbol": "CodecPrefix.blake2s_232",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 158,
-      "symbol": "CodecPrefix.skein256_24",
+      "symbol": "CodecPrefix.blake2s_240",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 159,
-      "symbol": "CodecPrefix.skein256_32",
+      "symbol": "CodecPrefix.blake2s_248",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 160,
-      "symbol": "CodecPrefix.skein256_40",
+      "symbol": "CodecPrefix.blake2s_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 161,
-      "symbol": "CodecPrefix.skein256_48",
+      "symbol": "CodecPrefix.skein256_8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 162,
-      "symbol": "CodecPrefix.skein256_56",
+      "symbol": "CodecPrefix.skein256_16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 163,
-      "symbol": "CodecPrefix.skein256_64",
+      "symbol": "CodecPrefix.skein256_24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 164,
-      "symbol": "CodecPrefix.skein256_72",
+      "symbol": "CodecPrefix.skein256_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 165,
-      "symbol": "CodecPrefix.skein256_80",
+      "symbol": "CodecPrefix.skein256_40",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 166,
-      "symbol": "CodecPrefix.skein256_88",
+      "symbol": "CodecPrefix.skein256_48",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 167,
-      "symbol": "CodecPrefix.skein256_96",
+      "symbol": "CodecPrefix.skein256_56",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 168,
-      "symbol": "CodecPrefix.skein256_104",
+      "symbol": "CodecPrefix.skein256_64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 169,
-      "symbol": "CodecPrefix.skein256_112",
+      "symbol": "CodecPrefix.skein256_72",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 170,
-      "symbol": "CodecPrefix.skein256_120",
+      "symbol": "CodecPrefix.skein256_80",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 171,
-      "symbol": "CodecPrefix.skein256_128",
+      "symbol": "CodecPrefix.skein256_88",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 172,
-      "symbol": "CodecPrefix.skein256_136",
+      "symbol": "CodecPrefix.skein256_96",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 173,
-      "symbol": "CodecPrefix.skein256_144",
+      "symbol": "CodecPrefix.skein256_104",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 174,
-      "symbol": "CodecPrefix.skein256_152",
+      "symbol": "CodecPrefix.skein256_112",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 175,
-      "symbol": "CodecPrefix.skein256_160",
+      "symbol": "CodecPrefix.skein256_120",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 176,
-      "symbol": "CodecPrefix.skein256_168",
+      "symbol": "CodecPrefix.skein256_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 177,
-      "symbol": "CodecPrefix.skein256_176",
+      "symbol": "CodecPrefix.skein256_136",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 178,
-      "symbol": "CodecPrefix.skein256_184",
+      "symbol": "CodecPrefix.skein256_144",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 179,
-      "symbol": "CodecPrefix.skein256_192",
+      "symbol": "CodecPrefix.skein256_152",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 180,
-      "symbol": "CodecPrefix.skein256_200",
+      "symbol": "CodecPrefix.skein256_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 181,
-      "symbol": "CodecPrefix.skein256_208",
+      "symbol": "CodecPrefix.skein256_168",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 182,
-      "symbol": "CodecPrefix.skein256_216",
+      "symbol": "CodecPrefix.skein256_176",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 183,
-      "symbol": "CodecPrefix.skein256_224",
+      "symbol": "CodecPrefix.skein256_184",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 184,
-      "symbol": "CodecPrefix.skein256_232",
+      "symbol": "CodecPrefix.skein256_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 185,
-      "symbol": "CodecPrefix.skein256_240",
+      "symbol": "CodecPrefix.skein256_200",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 186,
-      "symbol": "CodecPrefix.skein256_248",
+      "symbol": "CodecPrefix.skein256_208",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 187,
-      "symbol": "CodecPrefix.skein256_256",
+      "symbol": "CodecPrefix.skein256_216",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 188,
-      "symbol": "CodecPrefix.skein512_8",
+      "symbol": "CodecPrefix.skein256_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 189,
-      "symbol": "CodecPrefix.skein512_16",
+      "symbol": "CodecPrefix.skein256_232",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 190,
-      "symbol": "CodecPrefix.skein512_24",
+      "symbol": "CodecPrefix.skein256_240",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 191,
-      "symbol": "CodecPrefix.skein512_32",
+      "symbol": "CodecPrefix.skein256_248",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 192,
-      "symbol": "CodecPrefix.skein512_40",
+      "symbol": "CodecPrefix.skein256_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 193,
-      "symbol": "CodecPrefix.skein512_48",
+      "symbol": "CodecPrefix.skein512_8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 194,
-      "symbol": "CodecPrefix.skein512_56",
+      "symbol": "CodecPrefix.skein512_16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 195,
-      "symbol": "CodecPrefix.skein512_64",
+      "symbol": "CodecPrefix.skein512_24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 196,
-      "symbol": "CodecPrefix.skein512_72",
+      "symbol": "CodecPrefix.skein512_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 197,
-      "symbol": "CodecPrefix.skein512_80",
+      "symbol": "CodecPrefix.skein512_40",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 198,
-      "symbol": "CodecPrefix.skein512_88",
+      "symbol": "CodecPrefix.skein512_48",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 199,
-      "symbol": "CodecPrefix.skein512_96",
+      "symbol": "CodecPrefix.skein512_56",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 200,
-      "symbol": "CodecPrefix.skein512_104",
+      "symbol": "CodecPrefix.skein512_64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 201,
-      "symbol": "CodecPrefix.skein512_112",
+      "symbol": "CodecPrefix.skein512_72",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 202,
-      "symbol": "CodecPrefix.skein512_120",
+      "symbol": "CodecPrefix.skein512_80",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 203,
-      "symbol": "CodecPrefix.skein512_128",
+      "symbol": "CodecPrefix.skein512_88",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 204,
-      "symbol": "CodecPrefix.skein512_136",
+      "symbol": "CodecPrefix.skein512_96",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 205,
-      "symbol": "CodecPrefix.skein512_144",
+      "symbol": "CodecPrefix.skein512_104",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 206,
-      "symbol": "CodecPrefix.skein512_152",
+      "symbol": "CodecPrefix.skein512_112",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 207,
-      "symbol": "CodecPrefix.skein512_160",
+      "symbol": "CodecPrefix.skein512_120",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 208,
-      "symbol": "CodecPrefix.skein512_168",
+      "symbol": "CodecPrefix.skein512_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 209,
-      "symbol": "CodecPrefix.skein512_176",
+      "symbol": "CodecPrefix.skein512_136",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 210,
-      "symbol": "CodecPrefix.skein512_184",
+      "symbol": "CodecPrefix.skein512_144",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 211,
-      "symbol": "CodecPrefix.skein512_192",
+      "symbol": "CodecPrefix.skein512_152",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 212,
-      "symbol": "CodecPrefix.skein512_200",
+      "symbol": "CodecPrefix.skein512_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 213,
-      "symbol": "CodecPrefix.skein512_208",
+      "symbol": "CodecPrefix.skein512_168",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 214,
-      "symbol": "CodecPrefix.skein512_216",
+      "symbol": "CodecPrefix.skein512_176",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 215,
-      "symbol": "CodecPrefix.skein512_224",
+      "symbol": "CodecPrefix.skein512_184",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 216,
-      "symbol": "CodecPrefix.skein512_232",
+      "symbol": "CodecPrefix.skein512_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 217,
-      "symbol": "CodecPrefix.skein512_240",
+      "symbol": "CodecPrefix.skein512_200",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 218,
-      "symbol": "CodecPrefix.skein512_248",
+      "symbol": "CodecPrefix.skein512_208",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 219,
-      "symbol": "CodecPrefix.skein512_256",
+      "symbol": "CodecPrefix.skein512_216",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 220,
-      "symbol": "CodecPrefix.skein512_264",
+      "symbol": "CodecPrefix.skein512_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 221,
-      "symbol": "CodecPrefix.skein512_272",
+      "symbol": "CodecPrefix.skein512_232",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 222,
-      "symbol": "CodecPrefix.skein512_280",
+      "symbol": "CodecPrefix.skein512_240",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 223,
-      "symbol": "CodecPrefix.skein512_288",
+      "symbol": "CodecPrefix.skein512_248",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 224,
-      "symbol": "CodecPrefix.skein512_296",
+      "symbol": "CodecPrefix.skein512_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 225,
-      "symbol": "CodecPrefix.skein512_304",
+      "symbol": "CodecPrefix.skein512_264",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 226,
-      "symbol": "CodecPrefix.skein512_312",
+      "symbol": "CodecPrefix.skein512_272",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 227,
-      "symbol": "CodecPrefix.skein512_320",
+      "symbol": "CodecPrefix.skein512_280",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 228,
-      "symbol": "CodecPrefix.skein512_328",
+      "symbol": "CodecPrefix.skein512_288",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 229,
-      "symbol": "CodecPrefix.skein512_336",
+      "symbol": "CodecPrefix.skein512_296",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 230,
-      "symbol": "CodecPrefix.skein512_344",
+      "symbol": "CodecPrefix.skein512_304",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 231,
-      "symbol": "CodecPrefix.skein512_352",
+      "symbol": "CodecPrefix.skein512_312",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 232,
-      "symbol": "CodecPrefix.skein512_360",
+      "symbol": "CodecPrefix.skein512_320",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 233,
-      "symbol": "CodecPrefix.skein512_368",
+      "symbol": "CodecPrefix.skein512_328",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 234,
-      "symbol": "CodecPrefix.skein512_376",
+      "symbol": "CodecPrefix.skein512_336",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 235,
-      "symbol": "CodecPrefix.skein512_384",
+      "symbol": "CodecPrefix.skein512_344",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 236,
-      "symbol": "CodecPrefix.skein512_392",
+      "symbol": "CodecPrefix.skein512_352",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 237,
-      "symbol": "CodecPrefix.skein512_400",
+      "symbol": "CodecPrefix.skein512_360",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 238,
-      "symbol": "CodecPrefix.skein512_408",
+      "symbol": "CodecPrefix.skein512_368",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 239,
-      "symbol": "CodecPrefix.skein512_416",
+      "symbol": "CodecPrefix.skein512_376",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 240,
-      "symbol": "CodecPrefix.skein512_424",
+      "symbol": "CodecPrefix.skein512_384",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 241,
-      "symbol": "CodecPrefix.skein512_432",
+      "symbol": "CodecPrefix.skein512_392",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 242,
-      "symbol": "CodecPrefix.skein512_440",
+      "symbol": "CodecPrefix.skein512_400",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 243,
-      "symbol": "CodecPrefix.skein512_448",
+      "symbol": "CodecPrefix.skein512_408",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 244,
-      "symbol": "CodecPrefix.skein512_456",
+      "symbol": "CodecPrefix.skein512_416",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 245,
-      "symbol": "CodecPrefix.skein512_464",
+      "symbol": "CodecPrefix.skein512_424",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 246,
-      "symbol": "CodecPrefix.skein512_472",
+      "symbol": "CodecPrefix.skein512_432",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 247,
-      "symbol": "CodecPrefix.skein512_480",
+      "symbol": "CodecPrefix.skein512_440",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 248,
-      "symbol": "CodecPrefix.skein512_488",
+      "symbol": "CodecPrefix.skein512_448",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 249,
-      "symbol": "CodecPrefix.skein512_496",
+      "symbol": "CodecPrefix.skein512_456",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 250,
-      "symbol": "CodecPrefix.skein512_504",
+      "symbol": "CodecPrefix.skein512_464",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 251,
-      "symbol": "CodecPrefix.skein512_512",
+      "symbol": "CodecPrefix.skein512_472",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 252,
-      "symbol": "CodecPrefix.skein1024_8",
+      "symbol": "CodecPrefix.skein512_480",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 253,
-      "symbol": "CodecPrefix.skein1024_16",
+      "symbol": "CodecPrefix.skein512_488",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 254,
-      "symbol": "CodecPrefix.skein1024_24",
+      "symbol": "CodecPrefix.skein512_496",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 255,
-      "symbol": "CodecPrefix.skein1024_32",
+      "symbol": "CodecPrefix.skein512_504",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 256,
-      "symbol": "CodecPrefix.skein1024_40",
+      "symbol": "CodecPrefix.skein512_512",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 257,
-      "symbol": "CodecPrefix.skein1024_48",
+      "symbol": "CodecPrefix.skein1024_8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 258,
-      "symbol": "CodecPrefix.skein1024_56",
+      "symbol": "CodecPrefix.skein1024_16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 259,
-      "symbol": "CodecPrefix.skein1024_64",
+      "symbol": "CodecPrefix.skein1024_24",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 260,
-      "symbol": "CodecPrefix.skein1024_72",
+      "symbol": "CodecPrefix.skein1024_32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 261,
-      "symbol": "CodecPrefix.skein1024_80",
+      "symbol": "CodecPrefix.skein1024_40",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 262,
-      "symbol": "CodecPrefix.skein1024_88",
+      "symbol": "CodecPrefix.skein1024_48",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 263,
-      "symbol": "CodecPrefix.skein1024_96",
+      "symbol": "CodecPrefix.skein1024_56",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 264,
-      "symbol": "CodecPrefix.skein1024_104",
+      "symbol": "CodecPrefix.skein1024_64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 265,
-      "symbol": "CodecPrefix.skein1024_112",
+      "symbol": "CodecPrefix.skein1024_72",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 266,
-      "symbol": "CodecPrefix.skein1024_120",
+      "symbol": "CodecPrefix.skein1024_80",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 267,
-      "symbol": "CodecPrefix.skein1024_128",
+      "symbol": "CodecPrefix.skein1024_88",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 268,
-      "symbol": "CodecPrefix.skein1024_136",
+      "symbol": "CodecPrefix.skein1024_96",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 269,
-      "symbol": "CodecPrefix.skein1024_144",
+      "symbol": "CodecPrefix.skein1024_104",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 270,
-      "symbol": "CodecPrefix.skein1024_152",
+      "symbol": "CodecPrefix.skein1024_112",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 271,
-      "symbol": "CodecPrefix.skein1024_160",
+      "symbol": "CodecPrefix.skein1024_120",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 272,
-      "symbol": "CodecPrefix.skein1024_168",
+      "symbol": "CodecPrefix.skein1024_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 273,
-      "symbol": "CodecPrefix.skein1024_176",
+      "symbol": "CodecPrefix.skein1024_136",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 274,
-      "symbol": "CodecPrefix.skein1024_184",
+      "symbol": "CodecPrefix.skein1024_144",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 275,
-      "symbol": "CodecPrefix.skein1024_192",
+      "symbol": "CodecPrefix.skein1024_152",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 276,
-      "symbol": "CodecPrefix.skein1024_200",
+      "symbol": "CodecPrefix.skein1024_160",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 277,
-      "symbol": "CodecPrefix.skein1024_208",
+      "symbol": "CodecPrefix.skein1024_168",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 278,
-      "symbol": "CodecPrefix.skein1024_216",
+      "symbol": "CodecPrefix.skein1024_176",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 279,
-      "symbol": "CodecPrefix.skein1024_224",
+      "symbol": "CodecPrefix.skein1024_184",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 280,
-      "symbol": "CodecPrefix.skein1024_232",
+      "symbol": "CodecPrefix.skein1024_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 281,
-      "symbol": "CodecPrefix.skein1024_240",
+      "symbol": "CodecPrefix.skein1024_200",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 282,
-      "symbol": "CodecPrefix.skein1024_248",
+      "symbol": "CodecPrefix.skein1024_208",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 283,
-      "symbol": "CodecPrefix.skein1024_256",
+      "symbol": "CodecPrefix.skein1024_216",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 284,
-      "symbol": "CodecPrefix.skein1024_264",
+      "symbol": "CodecPrefix.skein1024_224",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 285,
-      "symbol": "CodecPrefix.skein1024_272",
+      "symbol": "CodecPrefix.skein1024_232",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 286,
-      "symbol": "CodecPrefix.skein1024_280",
+      "symbol": "CodecPrefix.skein1024_240",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 287,
-      "symbol": "CodecPrefix.skein1024_288",
+      "symbol": "CodecPrefix.skein1024_248",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 288,
-      "symbol": "CodecPrefix.skein1024_296",
+      "symbol": "CodecPrefix.skein1024_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 289,
-      "symbol": "CodecPrefix.skein1024_304",
+      "symbol": "CodecPrefix.skein1024_264",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 290,
-      "symbol": "CodecPrefix.skein1024_312",
+      "symbol": "CodecPrefix.skein1024_272",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 291,
-      "symbol": "CodecPrefix.skein1024_320",
+      "symbol": "CodecPrefix.skein1024_280",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 292,
-      "symbol": "CodecPrefix.skein1024_328",
+      "symbol": "CodecPrefix.skein1024_288",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 293,
-      "symbol": "CodecPrefix.skein1024_336",
+      "symbol": "CodecPrefix.skein1024_296",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 294,
-      "symbol": "CodecPrefix.skein1024_344",
+      "symbol": "CodecPrefix.skein1024_304",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 295,
-      "symbol": "CodecPrefix.skein1024_352",
+      "symbol": "CodecPrefix.skein1024_312",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 296,
-      "symbol": "CodecPrefix.skein1024_360",
+      "symbol": "CodecPrefix.skein1024_320",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 297,
-      "symbol": "CodecPrefix.skein1024_368",
+      "symbol": "CodecPrefix.skein1024_328",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 298,
-      "symbol": "CodecPrefix.skein1024_376",
+      "symbol": "CodecPrefix.skein1024_336",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 299,
-      "symbol": "CodecPrefix.skein1024_384",
+      "symbol": "CodecPrefix.skein1024_344",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 300,
-      "symbol": "CodecPrefix.skein1024_392",
+      "symbol": "CodecPrefix.skein1024_352",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 301,
-      "symbol": "CodecPrefix.skein1024_400",
+      "symbol": "CodecPrefix.skein1024_360",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 302,
-      "symbol": "CodecPrefix.skein1024_408",
+      "symbol": "CodecPrefix.skein1024_368",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 303,
-      "symbol": "CodecPrefix.skein1024_416",
+      "symbol": "CodecPrefix.skein1024_376",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 304,
-      "symbol": "CodecPrefix.skein1024_424",
+      "symbol": "CodecPrefix.skein1024_384",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 305,
-      "symbol": "CodecPrefix.skein1024_432",
+      "symbol": "CodecPrefix.skein1024_392",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 306,
-      "symbol": "CodecPrefix.skein1024_440",
+      "symbol": "CodecPrefix.skein1024_400",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 307,
-      "symbol": "CodecPrefix.skein1024_448",
+      "symbol": "CodecPrefix.skein1024_408",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 308,
-      "symbol": "CodecPrefix.skein1024_456",
+      "symbol": "CodecPrefix.skein1024_416",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 309,
-      "symbol": "CodecPrefix.skein1024_464",
+      "symbol": "CodecPrefix.skein1024_424",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 310,
-      "symbol": "CodecPrefix.skein1024_472",
+      "symbol": "CodecPrefix.skein1024_432",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 311,
-      "symbol": "CodecPrefix.skein1024_480",
+      "symbol": "CodecPrefix.skein1024_440",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 312,
-      "symbol": "CodecPrefix.skein1024_488",
+      "symbol": "CodecPrefix.skein1024_448",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 313,
-      "symbol": "CodecPrefix.skein1024_496",
+      "symbol": "CodecPrefix.skein1024_456",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 314,
-      "symbol": "CodecPrefix.skein1024_504",
+      "symbol": "CodecPrefix.skein1024_464",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 315,
-      "symbol": "CodecPrefix.skein1024_512",
+      "symbol": "CodecPrefix.skein1024_472",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 316,
-      "symbol": "CodecPrefix.skein1024_520",
+      "symbol": "CodecPrefix.skein1024_480",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 317,
-      "symbol": "CodecPrefix.skein1024_528",
+      "symbol": "CodecPrefix.skein1024_488",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 318,
-      "symbol": "CodecPrefix.skein1024_536",
+      "symbol": "CodecPrefix.skein1024_496",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 319,
-      "symbol": "CodecPrefix.skein1024_544",
+      "symbol": "CodecPrefix.skein1024_504",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 320,
-      "symbol": "CodecPrefix.skein1024_552",
+      "symbol": "CodecPrefix.skein1024_512",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 321,
-      "symbol": "CodecPrefix.skein1024_560",
+      "symbol": "CodecPrefix.skein1024_520",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 322,
-      "symbol": "CodecPrefix.skein1024_568",
+      "symbol": "CodecPrefix.skein1024_528",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 323,
-      "symbol": "CodecPrefix.skein1024_576",
+      "symbol": "CodecPrefix.skein1024_536",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 324,
-      "symbol": "CodecPrefix.skein1024_584",
+      "symbol": "CodecPrefix.skein1024_544",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 325,
-      "symbol": "CodecPrefix.skein1024_592",
+      "symbol": "CodecPrefix.skein1024_552",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 326,
-      "symbol": "CodecPrefix.skein1024_600",
+      "symbol": "CodecPrefix.skein1024_560",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 327,
-      "symbol": "CodecPrefix.skein1024_608",
+      "symbol": "CodecPrefix.skein1024_568",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 328,
-      "symbol": "CodecPrefix.skein1024_616",
+      "symbol": "CodecPrefix.skein1024_576",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 329,
-      "symbol": "CodecPrefix.skein1024_624",
+      "symbol": "CodecPrefix.skein1024_584",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 330,
-      "symbol": "CodecPrefix.skein1024_632",
+      "symbol": "CodecPrefix.skein1024_592",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 331,
-      "symbol": "CodecPrefix.skein1024_640",
+      "symbol": "CodecPrefix.skein1024_600",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 332,
-      "symbol": "CodecPrefix.skein1024_648",
+      "symbol": "CodecPrefix.skein1024_608",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 333,
-      "symbol": "CodecPrefix.skein1024_656",
+      "symbol": "CodecPrefix.skein1024_616",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 334,
-      "symbol": "CodecPrefix.skein1024_664",
+      "symbol": "CodecPrefix.skein1024_624",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 335,
-      "symbol": "CodecPrefix.skein1024_672",
+      "symbol": "CodecPrefix.skein1024_632",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 336,
-      "symbol": "CodecPrefix.skein1024_680",
+      "symbol": "CodecPrefix.skein1024_640",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 337,
-      "symbol": "CodecPrefix.skein1024_688",
+      "symbol": "CodecPrefix.skein1024_648",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 338,
-      "symbol": "CodecPrefix.skein1024_696",
+      "symbol": "CodecPrefix.skein1024_656",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 339,
-      "symbol": "CodecPrefix.skein1024_704",
+      "symbol": "CodecPrefix.skein1024_664",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 340,
-      "symbol": "CodecPrefix.skein1024_712",
+      "symbol": "CodecPrefix.skein1024_672",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 341,
-      "symbol": "CodecPrefix.skein1024_720",
+      "symbol": "CodecPrefix.skein1024_680",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 342,
-      "symbol": "CodecPrefix.skein1024_728",
+      "symbol": "CodecPrefix.skein1024_688",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 343,
-      "symbol": "CodecPrefix.skein1024_736",
+      "symbol": "CodecPrefix.skein1024_696",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 344,
-      "symbol": "CodecPrefix.skein1024_744",
+      "symbol": "CodecPrefix.skein1024_704",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 345,
-      "symbol": "CodecPrefix.skein1024_752",
+      "symbol": "CodecPrefix.skein1024_712",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 346,
-      "symbol": "CodecPrefix.skein1024_760",
+      "symbol": "CodecPrefix.skein1024_720",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 347,
-      "symbol": "CodecPrefix.skein1024_768",
+      "symbol": "CodecPrefix.skein1024_728",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 348,
-      "symbol": "CodecPrefix.skein1024_776",
+      "symbol": "CodecPrefix.skein1024_736",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 349,
-      "symbol": "CodecPrefix.skein1024_784",
+      "symbol": "CodecPrefix.skein1024_744",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 350,
-      "symbol": "CodecPrefix.skein1024_792",
+      "symbol": "CodecPrefix.skein1024_752",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 351,
-      "symbol": "CodecPrefix.skein1024_800",
+      "symbol": "CodecPrefix.skein1024_760",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 352,
-      "symbol": "CodecPrefix.skein1024_808",
+      "symbol": "CodecPrefix.skein1024_768",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 353,
-      "symbol": "CodecPrefix.skein1024_816",
+      "symbol": "CodecPrefix.skein1024_776",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 354,
-      "symbol": "CodecPrefix.skein1024_824",
+      "symbol": "CodecPrefix.skein1024_784",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 355,
-      "symbol": "CodecPrefix.skein1024_832",
+      "symbol": "CodecPrefix.skein1024_792",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 356,
-      "symbol": "CodecPrefix.skein1024_840",
+      "symbol": "CodecPrefix.skein1024_800",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 357,
-      "symbol": "CodecPrefix.skein1024_848",
+      "symbol": "CodecPrefix.skein1024_808",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 358,
-      "symbol": "CodecPrefix.skein1024_856",
+      "symbol": "CodecPrefix.skein1024_816",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 359,
-      "symbol": "CodecPrefix.skein1024_864",
+      "symbol": "CodecPrefix.skein1024_824",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 360,
-      "symbol": "CodecPrefix.skein1024_872",
+      "symbol": "CodecPrefix.skein1024_832",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 361,
-      "symbol": "CodecPrefix.skein1024_880",
+      "symbol": "CodecPrefix.skein1024_840",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 362,
-      "symbol": "CodecPrefix.skein1024_888",
+      "symbol": "CodecPrefix.skein1024_848",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 363,
-      "symbol": "CodecPrefix.skein1024_896",
+      "symbol": "CodecPrefix.skein1024_856",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 364,
-      "symbol": "CodecPrefix.skein1024_904",
+      "symbol": "CodecPrefix.skein1024_864",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 365,
-      "symbol": "CodecPrefix.skein1024_912",
+      "symbol": "CodecPrefix.skein1024_872",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 366,
-      "symbol": "CodecPrefix.skein1024_920",
+      "symbol": "CodecPrefix.skein1024_880",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 367,
-      "symbol": "CodecPrefix.skein1024_928",
+      "symbol": "CodecPrefix.skein1024_888",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 368,
-      "symbol": "CodecPrefix.skein1024_936",
+      "symbol": "CodecPrefix.skein1024_896",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 369,
-      "symbol": "CodecPrefix.skein1024_944",
+      "symbol": "CodecPrefix.skein1024_904",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 370,
-      "symbol": "CodecPrefix.skein1024_952",
+      "symbol": "CodecPrefix.skein1024_912",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 371,
-      "symbol": "CodecPrefix.skein1024_960",
+      "symbol": "CodecPrefix.skein1024_920",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 372,
-      "symbol": "CodecPrefix.skein1024_968",
+      "symbol": "CodecPrefix.skein1024_928",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 373,
-      "symbol": "CodecPrefix.skein1024_976",
+      "symbol": "CodecPrefix.skein1024_936",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 374,
-      "symbol": "CodecPrefix.skein1024_984",
+      "symbol": "CodecPrefix.skein1024_944",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 375,
-      "symbol": "CodecPrefix.skein1024_992",
+      "symbol": "CodecPrefix.skein1024_952",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 376,
-      "symbol": "CodecPrefix.skein1024_1000",
+      "symbol": "CodecPrefix.skein1024_960",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 377,
-      "symbol": "CodecPrefix.skein1024_1008",
+      "symbol": "CodecPrefix.skein1024_968",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 378,
-      "symbol": "CodecPrefix.skein1024_1016",
+      "symbol": "CodecPrefix.skein1024_976",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 379,
-      "symbol": "CodecPrefix.skein1024_1024",
+      "symbol": "CodecPrefix.skein1024_984",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 380,
-      "symbol": "CodecPrefix.poseidon_bls12_381_a2_fc1",
+      "symbol": "CodecPrefix.skein1024_992",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 381,
-      "symbol": "CodecPrefix.poseidon_bls12_381_a2_fc1_sc",
+      "symbol": "CodecPrefix.skein1024_1000",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 382,
+      "symbol": "CodecPrefix.skein1024_1008",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 383,
+      "symbol": "CodecPrefix.skein1024_1016",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 384,
-      "symbol": "CodecPrefix.ip4",
+      "symbol": "CodecPrefix.skein1024_1024",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 385,
-      "symbol": "CodecPrefix.tcp",
+      "symbol": "CodecPrefix.poseidon_bls12_381_a2_fc1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 386,
-      "symbol": "CodecPrefix.dccp",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 387,
-      "symbol": "CodecPrefix.ip6",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 388,
-      "symbol": "CodecPrefix.ip6zone",
+      "symbol": "CodecPrefix.poseidon_bls12_381_a2_fc1_sc",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 389,
-      "symbol": "CodecPrefix.dns",
+      "symbol": "CodecPrefix.ip4",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 390,
-      "symbol": "CodecPrefix.dns4",
+      "symbol": "CodecPrefix.tcp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 391,
-      "symbol": "CodecPrefix.dns6",
+      "symbol": "CodecPrefix.dccp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 392,
-      "symbol": "CodecPrefix.dnsaddr",
+      "symbol": "CodecPrefix.ip6",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 393,
-      "symbol": "CodecPrefix.sctp",
+      "symbol": "CodecPrefix.ip6zone",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 394,
-      "symbol": "CodecPrefix.udp",
+      "symbol": "CodecPrefix.dns",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 395,
-      "symbol": "CodecPrefix.p2p_webrtc_star",
+      "symbol": "CodecPrefix.dns4",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 396,
-      "symbol": "CodecPrefix.p2p_webrtc_direct",
+      "symbol": "CodecPrefix.dns6",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 397,
-      "symbol": "CodecPrefix.p2p_stardust",
+      "symbol": "CodecPrefix.dnsaddr",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 398,
-      "symbol": "CodecPrefix.p2p_circuit",
+      "symbol": "CodecPrefix.sctp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 399,
-      "symbol": "CodecPrefix.udt",
+      "symbol": "CodecPrefix.udp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 400,
-      "symbol": "CodecPrefix.utp",
+      "symbol": "CodecPrefix.p2p_webrtc_star",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 401,
-      "symbol": "CodecPrefix.unix",
+      "symbol": "CodecPrefix.p2p_webrtc_direct",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 402,
-      "symbol": "CodecPrefix.thread",
+      "symbol": "CodecPrefix.p2p_stardust",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 403,
-      "symbol": "CodecPrefix.p2p",
+      "symbol": "CodecPrefix.p2p_circuit",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 404,
-      "symbol": "CodecPrefix.https",
+      "symbol": "CodecPrefix.udt",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 405,
-      "symbol": "CodecPrefix.onion",
+      "symbol": "CodecPrefix.utp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 406,
-      "symbol": "CodecPrefix.onion3",
+      "symbol": "CodecPrefix.unix",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 407,
-      "symbol": "CodecPrefix.garlic64",
+      "symbol": "CodecPrefix.thread",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 408,
-      "symbol": "CodecPrefix.garlic32",
+      "symbol": "CodecPrefix.p2p",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 409,
-      "symbol": "CodecPrefix.tls",
+      "symbol": "CodecPrefix.https",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 410,
-      "symbol": "CodecPrefix.noise",
+      "symbol": "CodecPrefix.onion",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 411,
-      "symbol": "CodecPrefix.quic",
+      "symbol": "CodecPrefix.onion3",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 412,
-      "symbol": "CodecPrefix.ws",
+      "symbol": "CodecPrefix.garlic64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 413,
-      "symbol": "CodecPrefix.wss",
+      "symbol": "CodecPrefix.garlic32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 414,
-      "symbol": "CodecPrefix.p2p_websocket_star",
+      "symbol": "CodecPrefix.tls",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 415,
-      "symbol": "CodecPrefix.http",
+      "symbol": "CodecPrefix.noise",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 416,
-      "symbol": "CodecPrefix.plaintextv2",
+      "symbol": "CodecPrefix.quic",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 417,
+      "symbol": "CodecPrefix.ws",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 418,
+      "symbol": "CodecPrefix.wss",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 419,
-      "symbol": "CodecPrefix.cidv1",
+      "symbol": "CodecPrefix.p2p_websocket_star",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 420,
-      "symbol": "CodecPrefix.cidv2",
+      "symbol": "CodecPrefix.http",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 421,
-      "symbol": "CodecPrefix.cidv3",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 422,
-      "symbol": "CodecPrefix.raw",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 423,
-      "symbol": "CodecPrefix.dag_pb",
+      "symbol": "CodecPrefix.plaintextv2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 424,
-      "symbol": "CodecPrefix.dag_cbor",
+      "symbol": "CodecPrefix.cidv1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 425,
-      "symbol": "CodecPrefix.libp2p_key",
+      "symbol": "CodecPrefix.cidv2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 426,
-      "symbol": "CodecPrefix.git_raw",
+      "symbol": "CodecPrefix.cidv3",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 427,
-      "symbol": "CodecPrefix.torrent_info",
+      "symbol": "CodecPrefix.raw",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 428,
-      "symbol": "CodecPrefix.torrent_file",
+      "symbol": "CodecPrefix.dag_pb",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 429,
-      "symbol": "CodecPrefix.leofcoin_block",
+      "symbol": "CodecPrefix.dag_cbor",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 430,
-      "symbol": "CodecPrefix.leofcoin_tx",
+      "symbol": "CodecPrefix.libp2p_key",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 431,
-      "symbol": "CodecPrefix.leofcoin_pr",
+      "symbol": "CodecPrefix.git_raw",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 432,
-      "symbol": "CodecPrefix.dag_jose",
+      "symbol": "CodecPrefix.torrent_info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 433,
-      "symbol": "CodecPrefix.dag_cose",
+      "symbol": "CodecPrefix.torrent_file",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 434,
-      "symbol": "CodecPrefix.eth_block",
+      "symbol": "CodecPrefix.leofcoin_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 435,
-      "symbol": "CodecPrefix.eth_block_list",
+      "symbol": "CodecPrefix.leofcoin_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 436,
-      "symbol": "CodecPrefix.eth_tx_trie",
+      "symbol": "CodecPrefix.leofcoin_pr",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 437,
-      "symbol": "CodecPrefix.eth_tx",
+      "symbol": "CodecPrefix.dag_jose",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 438,
-      "symbol": "CodecPrefix.eth_tx_receipt_trie",
+      "symbol": "CodecPrefix.dag_cose",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 439,
-      "symbol": "CodecPrefix.eth_tx_receipt",
+      "symbol": "CodecPrefix.eth_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 440,
-      "symbol": "CodecPrefix.eth_state_trie",
+      "symbol": "CodecPrefix.eth_block_list",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 441,
-      "symbol": "CodecPrefix.eth_account_snapshot",
+      "symbol": "CodecPrefix.eth_tx_trie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 442,
-      "symbol": "CodecPrefix.eth_storage_trie",
+      "symbol": "CodecPrefix.eth_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 443,
-      "symbol": "CodecPrefix.eth_receipt_log_trie",
+      "symbol": "CodecPrefix.eth_tx_receipt_trie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 444,
-      "symbol": "CodecPrefix.eth_reciept_log",
+      "symbol": "CodecPrefix.eth_tx_receipt",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 445,
-      "symbol": "CodecPrefix.bitcoin_block",
+      "symbol": "CodecPrefix.eth_state_trie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 446,
-      "symbol": "CodecPrefix.bitcoin_tx",
+      "symbol": "CodecPrefix.eth_account_snapshot",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 447,
-      "symbol": "CodecPrefix.bitcoin_witness_commitment",
+      "symbol": "CodecPrefix.eth_storage_trie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 448,
-      "symbol": "CodecPrefix.zcash_block",
+      "symbol": "CodecPrefix.eth_receipt_log_trie",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 449,
-      "symbol": "CodecPrefix.zcash_tx",
+      "symbol": "CodecPrefix.eth_reciept_log",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 450,
-      "symbol": "CodecPrefix.stellar_block",
+      "symbol": "CodecPrefix.bitcoin_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 451,
-      "symbol": "CodecPrefix.stellar_tx",
+      "symbol": "CodecPrefix.bitcoin_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 452,
-      "symbol": "CodecPrefix.decred_block",
+      "symbol": "CodecPrefix.bitcoin_witness_commitment",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 453,
-      "symbol": "CodecPrefix.decred_tx",
+      "symbol": "CodecPrefix.zcash_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 454,
-      "symbol": "CodecPrefix.dash_block",
+      "symbol": "CodecPrefix.zcash_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 455,
-      "symbol": "CodecPrefix.dash_tx",
+      "symbol": "CodecPrefix.stellar_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 456,
-      "symbol": "CodecPrefix.swarm_manifest",
+      "symbol": "CodecPrefix.stellar_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 457,
-      "symbol": "CodecPrefix.swarm_feed",
+      "symbol": "CodecPrefix.decred_block",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 458,
-      "symbol": "CodecPrefix.dag_json",
+      "symbol": "CodecPrefix.decred_tx",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 459,
-      "symbol": "CodecPrefix.swhid_1_snp",
+      "symbol": "CodecPrefix.dash_block",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 460,
+      "symbol": "CodecPrefix.dash_tx",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 461,
+      "symbol": "CodecPrefix.swarm_manifest",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 462,
-      "symbol": "CodecPrefix.path",
+      "symbol": "CodecPrefix.swarm_feed",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 463,
-      "symbol": "CodecPrefix.streamid",
+      "symbol": "CodecPrefix.dag_json",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 464,
-      "symbol": "CodecPrefix.ipld_ns",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 465,
-      "symbol": "CodecPrefix.ipfs_ns",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 466,
-      "symbol": "CodecPrefix.swarm_ns",
+      "symbol": "CodecPrefix.swhid_1_snp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 467,
-      "symbol": "CodecPrefix.ipns_ns",
+      "symbol": "CodecPrefix.path",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 468,
-      "symbol": "CodecPrefix.zeronet",
+      "symbol": "CodecPrefix.streamid",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 469,
-      "symbol": "CodecPrefix.skynet_ns",
+      "symbol": "CodecPrefix.ipld_ns",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 470,
-      "symbol": "CodecPrefix.arweave_ns",
+      "symbol": "CodecPrefix.ipfs_ns",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 471,
+      "symbol": "CodecPrefix.swarm_ns",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 472,
+      "symbol": "CodecPrefix.ipns_ns",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 473,
-      "symbol": "CodecPrefix.aes_128",
+      "symbol": "CodecPrefix.zeronet",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 474,
-      "symbol": "CodecPrefix.aes_192",
+      "symbol": "CodecPrefix.skynet_ns",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 475,
-      "symbol": "CodecPrefix.aes_256",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 476,
-      "symbol": "CodecPrefix.chacha_128",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 477,
-      "symbol": "CodecPrefix.chacha_256",
+      "symbol": "CodecPrefix.arweave_ns",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 478,
-      "symbol": "CodecPrefix.secp256k1_pub",
+      "symbol": "CodecPrefix.aes_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 479,
-      "symbol": "CodecPrefix.bls12_381_g1_pub",
+      "symbol": "CodecPrefix.aes_192",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 480,
-      "symbol": "CodecPrefix.bls12_381_g2_pub",
+      "symbol": "CodecPrefix.aes_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 481,
-      "symbol": "CodecPrefix.x25519_pub",
+      "symbol": "CodecPrefix.chacha_128",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 482,
-      "symbol": "CodecPrefix.ed25519_pub",
+      "symbol": "CodecPrefix.chacha_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 483,
-      "symbol": "CodecPrefix.bls12_381_g1g2_pub",
+      "symbol": "CodecPrefix.secp256k1_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 484,
-      "symbol": "CodecPrefix.p256_pub",
+      "symbol": "CodecPrefix.bls12_381_g1_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 485,
-      "symbol": "CodecPrefix.p384_pub",
+      "symbol": "CodecPrefix.bls12_381_g2_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 486,
-      "symbol": "CodecPrefix.p521_pub",
+      "symbol": "CodecPrefix.x25519_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 487,
-      "symbol": "CodecPrefix.ed448_pub",
+      "symbol": "CodecPrefix.ed25519_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 488,
-      "symbol": "CodecPrefix.x448_pub",
+      "symbol": "CodecPrefix.bls12_381_g1g2_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 489,
-      "symbol": "CodecPrefix.rsa_x509_pub",
+      "symbol": "CodecPrefix.p256_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 490,
-      "symbol": "CodecPrefix.ed25519_priv",
+      "symbol": "CodecPrefix.p384_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 491,
-      "symbol": "CodecPrefix.secp256k1_priv",
+      "symbol": "CodecPrefix.p521_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 492,
-      "symbol": "CodecPrefix.x25519_priv",
+      "symbol": "CodecPrefix.ed448_pub",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 493,
+      "symbol": "CodecPrefix.x448_pub",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 494,
+      "symbol": "CodecPrefix.rsa_pub",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 495,
-      "symbol": "CodecPrefix.holochain_adr_v0",
+      "symbol": "CodecPrefix.ed25519_priv",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 496,
-      "symbol": "CodecPrefix.holochain_adr_v1",
+      "symbol": "CodecPrefix.secp256k1_priv",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 497,
-      "symbol": "CodecPrefix.holochain_key_v0",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 498,
-      "symbol": "CodecPrefix.holochain_key_v1",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 499,
-      "symbol": "CodecPrefix.holochain_sig_v0",
+      "symbol": "CodecPrefix.x25519_priv",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 500,
-      "symbol": "CodecPrefix.holochain_sig_v1",
+      "symbol": "CodecPrefix.holochain_adr_v0",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 501,
+      "symbol": "CodecPrefix.holochain_adr_v1",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 502,
+      "symbol": "CodecPrefix.holochain_key_v0",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 503,
-      "symbol": "CodecPrefix.libp2p_peer_record",
+      "symbol": "CodecPrefix.holochain_key_v1",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
       "line": 504,
+      "symbol": "CodecPrefix.holochain_sig_v0",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 505,
+      "symbol": "CodecPrefix.holochain_sig_v1",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 508,
+      "symbol": "CodecPrefix.libp2p_peer_record",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
+      "line": 509,
       "symbol": "CodecPrefix.libp2p_relay_rsvp",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 507,
+      "line": 512,
       "symbol": "CodecPrefix.zeroxcert_imprint_256",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 510,
+      "line": 515,
       "symbol": "CodecPrefix.fil_commitment_unsealed",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/CodecPrefix.swift",
-      "line": 511,
+      "line": 516,
       "symbol": "CodecPrefix.fil_commitment_sealed",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 10,
-      "symbol": "Data.init(fromMultibaseEncodedString:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 14,
-      "symbol": "Data.init(fromMultibaseEncodedString:withEncoding:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 18,
-      "symbol": "Data.multibaseEncodedString(_:prefix:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 23,
+      "line": 26,
       "symbol": "Multibase",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 24,
+      "line": 27,
       "symbol": "Multibase.Encoding",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 25,
+      "line": 28,
       "symbol": "Multibase.Encoding.identity",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 26,
+      "line": 29,
       "symbol": "Multibase.Encoding.base2",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 27,
+      "line": 30,
       "symbol": "Multibase.Encoding.base8",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 28,
+      "line": 31,
       "symbol": "Multibase.Encoding.base10",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 29,
+      "line": 32,
       "symbol": "Multibase.Encoding.base16",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 30,
+      "line": 33,
       "symbol": "Multibase.Encoding.base16upper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 31,
+      "line": 34,
       "symbol": "Multibase.Encoding.base32hex",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 32,
+      "line": 35,
       "symbol": "Multibase.Encoding.base32hexupper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 33,
+      "line": 36,
       "symbol": "Multibase.Encoding.base32hexpad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 34,
+      "line": 37,
       "symbol": "Multibase.Encoding.base32hexpadupper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 35,
+      "line": 38,
       "symbol": "Multibase.Encoding.base32",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 36,
+      "line": 39,
       "symbol": "Multibase.Encoding.base32upper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 37,
+      "line": 40,
       "symbol": "Multibase.Encoding.base32pad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 38,
+      "line": 41,
       "symbol": "Multibase.Encoding.base32padupper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 39,
+      "line": 42,
       "symbol": "Multibase.Encoding.base32z",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 40,
+      "line": 43,
       "symbol": "Multibase.Encoding.base36",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 41,
+      "line": 44,
       "symbol": "Multibase.Encoding.base36upper",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 42,
+      "line": 45,
       "symbol": "Multibase.Encoding.base58btc",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 43,
+      "line": 46,
       "symbol": "Multibase.Encoding.base58flickr",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 44,
+      "line": 47,
       "symbol": "Multibase.Encoding.base64",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 45,
+      "line": 48,
       "symbol": "Multibase.Encoding.base64pad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 46,
+      "line": 49,
       "symbol": "Multibase.Encoding.base64url",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 47,
+      "line": 50,
       "symbol": "Multibase.Encoding.base64urlpad",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 48,
+      "line": 51,
       "symbol": "Multibase.Encoding.proquint",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/runner/work/Multiformat.swift/Multiformat.swift/Sources/Multiformat/Multibase.swift",
-      "line": 145,
-      "symbol": "Multibase.identifyEncoding(string:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {

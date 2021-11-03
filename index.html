@@ -16,7 +16,7 @@
     <a title="  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (3% documented)</p>
+        <p><a href="index.html"> Docs</a> (4% documented)</p>
         <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -92,22 +92,82 @@
           <section class="section">
             
             <h1 id='multiformat-swift' class='heading'>Multiformat.swift</h1>
+
+<p><img src="https://github.com/jmmaloney4/Multiformat.swift/actions/workflows/build.yaml/badge.svg" alt="Build"></p>
+
+<p>A Swift implementation of most of the multiformat specifications. </p>
+
+<table><thead>
+<tr>
+<th>Spec</th>
+<th>Status</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><a href="https://github.com/multiformats/multiaddr">multiaddr</a></td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multiformats/multibase">multibase</a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multiformats/multicodec">multicodec</a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multiformats/multihash">multihash</a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multiformats/multibase">multistream</a></td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multiformats/cid">CID</a></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h1 id='install' class='heading'>Install</h1>
+
+<p>Add the following to your <code>Package.swift</code></p>
+<pre class="highlight swift"><code><span class="c1">// swift-tools-version:5.0</span>
+
+<span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+  <span class="nv">name</span><span class="p">:</span> <span class="s">"AwesomeIPFSProject"</span><span class="p">,</span>
+  <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/jmmaloney4/Multiformat.swift.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"0.1.0"</span><span class="p">)</span>
+  <span class="p">],</span>
+  <span class="nv">targets</span><span class="p">:</span> <span class="p">[</span>
+    <span class="o">.</span><span class="nf">target</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"AwesomeIPFSProject"</span><span class="p">,</span> <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s">"Multiformat"</span><span class="p">])</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h1 id='usage' class='heading'>Usage</h1>
+<h3 id='cid' class='heading'>CID</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cid</span> <span class="o">=</span> <span class="kt">CID</span><span class="p">(</span><span class="s">"bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">version</span><span class="p">)</span> <span class="c1">// .v1</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">codec</span><span class="p">)</span> <span class="c1">// .raw</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">hash</span><span class="o">.</span><span class="n">code</span><span class="p">)</span> <span class="c1">// .sha2_256</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="n">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">)</span>  <span class="c1">// Data([203, 11, 180, 190, 173, 250, 237, 102, 74, 18, 240, 220, 170, 110, 157, 192, 31, 252, 194, 31, 60, 154, 226, 27, 28, 146, 93, 87, 75, 136, 126, 216])</span>
                         <span class="c1">// Or CB0BB4BEADFAED664A12F0DCAA6E9DC01FFCC21F3C9AE21B1C925D574B887ED8</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cid</span><span class="o">.</span><span class="nf">encoded</span><span class="p">(</span><span class="nv">base</span><span class="p">:</span> <span class="o">.</span><span class="n">base32</span><span class="p">))</span> <span class="c1">// bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a</span>
 </code></pre>
-<h2 id='multibase' class='heading'>Multibase</h2>
+<h3 id='multibase' class='heading'>Multibase</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">fromMultibaseEncodedString</span><span class="p">:</span> <span class="s">"MTXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="</span><span class="p">)</span>
 <span class="c1">// Data([0x4D, 0x75, 0x6C, 0x74, 0x69, 0x62, 0x61, 0x73, 0x65, 0x20, 0x69, 0x73, 0x20, 0x61, 0x77, 0x65, 0x73, 0x6F, 0x6D, 0x65, 0x21, 0x20, 0x5C, 0x6F, 0x2F])</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="nf">multibaseEncodedString</span><span class="p">(</span><span class="o">.</span><span class="n">base64pad</span><span class="p">,</span> <span class="nv">prefix</span><span class="p">:</span> <span class="kc">false</span><span class="p">))</span> <span class="c1">// "TXVsdGliYXNlIGlzIGF3ZXNvbWUhIFxvLw=="</span>
 </code></pre>
+<h3 id='multihash' class='heading'>Multihash</h3>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="kt">Data</span><span class="p">(</span><span class="nv">fromMultibaseEncodedString</span><span class="p">:</span> <span class="s">"da2a4b6ff630c695987abe290c276658fb83d6c4b46fa3313892cd4dd04a8a93"</span><span class="p">,</span> <span class="nv">withEncoding</span><span class="p">:</span> <span class="o">.</span><span class="n">base16</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">hash</span> <span class="o">=</span> <span class="kt">Multihash</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="o">.</span><span class="n">sha2_256</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+</code></pre>
 <h2 id='update-multicodec-table' class='heading'>Update Multicodec Table</h2>
 <pre class="highlight plaintext"><code>curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv | ./update_table.py
 </code></pre>
-<h2 id='documentation' class='heading'>Documentation</h2>
+<h2 id='external-documentation' class='heading'>External Documentation</h2>
 <h3 id='rfc-4648' class='heading'>RFC 4648</h3>
 
 <p><a href="https://ipfs.io/ipfs/bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a">/ipfs/bafkreiglbo2l5lp25vteuexq3svg5hoad76mehz4tlrbwheslvluxcd63a</a></p>
@@ -118,7 +178,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-11-02)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-11-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
