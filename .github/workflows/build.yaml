@@ -15,7 +15,7 @@ jobs:
         swift: ["5.5", "5.4", "5.3"]
 
     steps:
-    - uses: actions/checkout@v3.0.2
+    - uses: actions/checkout@v3.1.0
 
     - uses:  marcprux/setup-swift@a990bc57c514a77d232b645843ade099af21aa5e
       with:
