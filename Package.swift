@@ -20,7 +20,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/jmmaloney4/VarInt.git", from: "1.0.0"),
         .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.4.0"),
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "2.4.1"),
     ],
     targets: [
         .target(
